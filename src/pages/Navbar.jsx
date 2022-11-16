@@ -20,12 +20,12 @@ export const Link = ({ page, selectedPage, setSelectedPage }) => {
 };
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-blue2 shadow-xl";
 
   return (
-    <nav className={`${navbarBackground} z-50 w-full fixed top-0 py-6`}>
-      <div className="flex items-center justify-between w-5/6 mx-auto">
+    <nav className={`${navbarBackground} z-50 w-full md:fixed top-0 py-6`}>
+      <div className="flex justify-end items-center md:justify-between w-5/6 mx-auto">
         <div className="text-xl flex items-center justify-between">
             <h4 className="font-semibold text-accentGreen">
               JK

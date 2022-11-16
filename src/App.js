@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
 import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from './pages/Navbar';
 import DotGroup from './pages/DotGroup';
@@ -6,11 +7,14 @@ import Landing from './pages/Landing';
 import LineGradient from './components/LineGradient';
 import About from './pages/About';
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Footer from './pages/Footer';
+
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  const isDesktop = useMediaQuery("(min-width:1060px)");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,24 +37,56 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <div className="relative w-5/6 mx-auto md:h-full">
-      <div className="app-clip absolute h-screen w-full bg-blue" />
-        {isAboveMediumScreens && (
+        <div className="app-clip absolute h-screen w-full bg-blue" />
+        {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
         )}
-        <Landing setSelectedPage={setSelectedPage} />
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("home")}
+        >
+          <Landing setSelectedPage={setSelectedPage} />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="relative w-5/6 mx-auto md:h-full">
         <div className="about-clip absolute h-screen w-full bg-red" />
-        <About />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto">
-          <Projects />
-      </div>
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("skills")}
+          >
+
+            <About />
+          </motion.div>
+        </div>
+        <LineGradient />
+
+        <div className="w-5/6 mx-auto md:h-screen">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("projects")}
+          >
+
+            <Projects />
+          </motion.div>
+        </div>
+        <LineGradient />
+        <div className="w-5/6 mx-auto md:h-full">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("contact")}
+          >
+            <Contact />
+          </motion.div>
+        </div>
+      <Footer />
     </div>
   );
 }

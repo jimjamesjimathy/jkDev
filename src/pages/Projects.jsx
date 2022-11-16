@@ -17,29 +17,29 @@ const projectVariant = {
 };
 
 const Project = () => {
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-darkest`;
+  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-75 transition duration-500
+    bg-accentText z-30 flex flex-col justify-center items-center text-center p-16 text-darkest`;
 
   return (
     <>
-    {projects.map(project => (
-    <motion.div variants={projectVariant} key={project.id} className="relative max-w-[400px] max-h-[500px] border border-black bg-gold">
-      <div className={overlayStyles}>
-        <h1>{project.title}</h1>
-        <p>{project.price}</p>
-      </div>
-      <img src={project.img} alt={project.title} />
-    </motion.div>
-    ))}
+      {projects.map(project => (
+        <motion.div variants={projectVariant} key={project.id} className="relative max-w-[450px] max-h-[500px]">
+          <div className={overlayStyles}>
+            <h1>{project.title}</h1>
+            <p>{project.price}</p>
+          </div>
+          <img src={project.img} alt={project.title} />
+        </motion.div>
+      ))}
     </>
   );
 };
 
 const Projects = () => {
   return (
-    <section id="portfolio" className="py-28">
+    <section id="portfolio" className="pb-10 pt-24">
       <motion.div
-        className="mx-auto text-center md:w-2/5"
+        className="mx-auto text-center w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -49,37 +49,30 @@ const Projects = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="">
-          <p className="text-6xl font-semibold font-neucha tracking-widest">
-            My <span className="text-bronze">Projects</span>
+        <div className="mb-12">
+          <p className="text-6xl font-normal tracking-widest">
+            My <span className="">Projects</span>
           </p>
-          <div className="flex justify-center mt-5">
-            <LineGradient width="w-full" />
+          <div className="flex justify-center mt-4">
+            <LineGradient width="w-3/4" />
           </div>
         </div>
-
-        <p className="mt-10 mb-10">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores,
-          quaerat provident aliquam ipsam autem enim dolorem qui consectetur
-          pariatur.
-        </p>
       </motion.div>
 
       {/* SERVICES */}
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <motion.div
-          className="sm:grid sm:grid-cols-3"
+          className="grid sm:grid-cols-2 md:grid-cols-3 "
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* ROW 1 */}
           <div
             className="flex justify-center text-center items-center p-10 bg-red
-              max-w-[400px] max-h-[400px] text-2xl font-poppins font-normal"
+              max-w-[450px] max-h-[500px] text-xl font-poppins font-normal "
           >
-            SERVICES & PRICES
+            My Recent Projects:
           </div>
 
           <Project />

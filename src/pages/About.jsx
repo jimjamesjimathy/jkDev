@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section id="about" className="pt-10 pb-24 z-10">
       {/* HEADER AND IMAGE SECTION */}
-      <div className="mt-32 md:flex md:justify-between md:gap-16 z-10">
+      <div className="mt-24 text-center md:text-start md:flex md:justify-between md:gap-16 z-10">
         <motion.div
           className="md:w-1/3 z-10"
           initial="hidden"
@@ -21,10 +21,10 @@ const About = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="mb-5 text-6xl font-neucha tracking-wide">
+          <p className="mb-5 text-5xl font-neucha tracking-wide">
             <span className="text-blue">About </span> Me
           </p>
-          <LineGradient width="w-1/3" />
+          <LineGradient width="w-5/7 md:w-full" />
           <p className="mt-10 mb-7">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores,
             quaerat provident aliquam ipsam autem enim dolorem qui consectetur

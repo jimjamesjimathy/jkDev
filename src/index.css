@@ -29,6 +29,7 @@ body,
     z-index: 2 !important;
 }
 
+
 ::-webkit-scrollbar {
     width: 0;
 }
