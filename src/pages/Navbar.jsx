@@ -29,7 +29,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         <div className="text-xl flex items-center justify-between">
             <h4 className="font-semibold text-accentGreen">
               JK
-              <span className="text-red mx-2">//</span>
+              <span className="text-red mx-2">||</span>
               WEBDEV</h4>
         </div>
         {isDesktop ? (

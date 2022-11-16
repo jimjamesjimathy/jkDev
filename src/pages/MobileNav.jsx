@@ -1,7 +1,5 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import { BiMenuAltleft } from "react-icons/bi";
-import { TfiClose } from "react-icons/tfi";
 import { Link } from "./Navbar";
 import { navigation } from "../data";
 import { useDimensions } from "./useDimensions";
@@ -25,6 +23,7 @@ const Navigation = () => (
 
 const Path = props => (
   <motion.path
+    fill="transparent"
     strokeWidth="3"
     stroke="#B5432C"
     strokeLinecap="round"
