@@ -69,8 +69,8 @@ const Projects = () => {
           viewport={{ once: false, amount: 0.2 }}
         >
           <div
-            className="flex justify-center text-center items-center p-10 bg-blue
-              max-w-[450px] max-h-[500px] text-xl font-poppins font-normal "
+            className="flex justify-center text-center items-center p-10 bg-brown
+              max-w-[475px] max-h-[235px] text-xl font-poppins font-normal "
           >
             My Recent Projects:
           </div>
