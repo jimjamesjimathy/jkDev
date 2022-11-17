@@ -66,7 +66,7 @@ function App() {
         <LineGradient />
 
         <div className="relative w-5/6 mx-auto md:h-screen">
-        <div className="portfolio-clip absolute h-full w-full bg-brown" />
+        <div className="portfolio-clip absolute h-full w-full bg-blue" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"

@@ -43,7 +43,7 @@ const Contact = () => {
       </motion.div>
 
       {/* FORM & IMAGE */}
-      <div className="z-20 md:flex md:justify-between gap-16 mt-5">
+      <div className="z-20 md:flex md:justify-between md:items-center gap-16 mt-5">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -55,7 +55,7 @@ const Contact = () => {
           }}
           className="z-20 basis-1/2 flex justify-center"
         >
-          <img src={contact} alt="contact" />
+          <img src={contact} alt="contact" className="rounded-md" />
         </motion.div>
 
         <motion.div
@@ -128,7 +128,7 @@ const Contact = () => {
             )}
 
             <button
-              className="z-20 p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="z-20 p-5 bg-darkGreen rounded-md font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
               SEND ME A MESSAGE

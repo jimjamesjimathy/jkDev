@@ -31,17 +31,20 @@ body,
 
 .about-clip {
     clip-path: polygon(0 0, 65% 0, 100% 100%, 35% 100%);
-    z-index: 2 !important;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .portfolio-clip {
     clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
     z-index: -1;
+    opacity: 0.5;
 }
 
 .contact-clip {
     clip-path: polygon(0 0, 65% 0, 100% 100%, 35% 100%);
     z-index: -1;
+    opacity: 0.5;
 }
 
 ::-webkit-scrollbar {
