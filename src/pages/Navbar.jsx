@@ -8,7 +8,7 @@ export const Link = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? "text-accentRed font-bold uppercase" : ""
+        selectedPage === lowerCasePage ? "text-lightRed font-bold uppercase" : ""
       }
             hover:text-red-900 transition duration-500`}
       href={`#${lowerCasePage}`}
@@ -21,16 +21,16 @@ export const Link = ({ page, selectedPage, setSelectedPage }) => {
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const isDesktop = useMediaQuery("(min-width: 1060px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-blue2 shadow-xl";
+  const navbarBackground = isTopOfPage ? "" : "z-50 bg-darkest border-b-2 border-darkest shadow-xl shadow-opaque-black";
 
   return (
     <nav className={`${navbarBackground} z-50 w-full md:fixed top-0 py-6`}>
       <div className="flex justify-end items-center md:justify-between w-5/6 mx-auto">
         <div className="text-xl flex items-center justify-between">
-            <h4 className="font-semibold text-accentGreen">
+            <h4 className="text-green font-medium">
               JK
               <span className="text-red mx-2">||</span>
-              WEBDEV</h4>
+              DEV</h4>
         </div>
         {isDesktop ? (
           <ul className={"flex space-x-8 font-semibold text-md"}>
@@ -46,8 +46,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
           </ul>
         ) : (
           <MobileNav
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
             isDesktop={isDesktop}
           />
         )}

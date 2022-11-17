@@ -30,14 +30,13 @@ function App() {
 
 
   return (
-    <div className="App relative">
+    <div className="App">
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="relative w-5/6 mx-auto md:h-full">
-        <div className="app-clip absolute h-screen w-full bg-blue" />
+      <div className="w-5/6 mx-auto md:h-full">
         {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}
@@ -54,11 +53,11 @@ function App() {
       </div>
       <LineGradient />
       <div className="relative w-5/6 mx-auto md:h-full">
-        <div className="about-clip absolute h-screen w-full bg-red" />
+        <div className="about-clip absolute h-screen w-full bg-green" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
-            onViewportEnter={() => setSelectedPage("skills")}
+            onViewportEnter={() => setSelectedPage("about")}
           >
 
             <About />
@@ -66,18 +65,20 @@ function App() {
         </div>
         <LineGradient />
 
-        <div className="w-5/6 mx-auto md:h-screen">
+        <div className="relative w-5/6 mx-auto md:h-screen">
+        <div className="portfolio-clip absolute h-full w-full bg-brown" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
-            onViewportEnter={() => setSelectedPage("projects")}
+            onViewportEnter={() => setSelectedPage("portfolio")}
           >
 
             <Projects />
           </motion.div>
         </div>
         <LineGradient />
-        <div className="w-5/6 mx-auto md:h-full">
+        <div className="relative w-5/6 mx-auto md:h-full">
+        <div className="contact-clip absolute h-screen w-full bg-red" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
@@ -86,6 +87,7 @@ function App() {
             <Contact />
           </motion.div>
         </div>
+        <LineGradient />
       <Footer />
     </div>
   );

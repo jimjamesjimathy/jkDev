@@ -13,49 +13,12 @@ const navVariants = {
   }
 };
 
-const Navigation = () => (
+const Navigation = ({ i, toggle }) => (
   <motion.ul className="absolute top-16 h-2/3 w-full z-50 flex flex-col items-center justify-evenly" variants={navVariants}>
     {navigation.map(i => (
-      <MenuItem i={i} key={i} />
+      <MenuItem i={i} key={i.id} toggle={toggle} />
     ))}
   </motion.ul>
-);
-
-const Path = props => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="#B5432C"
-    strokeLinecap="round"
-    {...props}
-  />
-);
-
-const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle} className="absolute top-3 left-3 w-9 h-9 flex items-center justify-center rounded-full transparent z-50">
-    <svg width="23" height="23" viewBox="0 0 22.5 21">
-      <Path
-        variants={{
-          closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 16.5 L 17 2.5" }
-        }}
-        />
-      <Path
-        d="M 2 9.423 L 20 9.423"
-        variants={{
-          closed: { opacity: 1 },
-          open: { opacity: 0 }
-        }}
-        transition={{ duration: 0.3 }}
-      />
-      <Path
-        variants={{
-          closed: { d: "M 2 16.346 L 20 16.346" },
-          open: { d: "M 3 2.5 L 17 16.346" }
-        }}
-      />
-    </svg>
-  </button>
 );
 
 const liVariants = {
@@ -75,8 +38,7 @@ const liVariants = {
   }
 };
 
-
-export const MenuItem = ({ selectedPage, setSelectedPage, i }) => {
+export const MenuItem = ({ i, toggle }) => {
 
   return (
     <motion.li
@@ -84,16 +46,52 @@ export const MenuItem = ({ selectedPage, setSelectedPage, i }) => {
       variants={liVariants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={toggle}
     >
       <Link
         page={i.name}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
       />
     </motion.li>
   );
 };
 
+
+const Path = props => (
+  <motion.path
+    fill="transparent"
+    strokeWidth="2"
+    stroke="#F5F5F5"
+    strokeLinecap="round"
+    {...props}
+  />
+);
+
+const MenuToggle = ({ toggle }) => (
+  <button onClick={toggle} className="relative top-3 left-3 w-9 h-9 flex items-center justify-center rounded-full transparent z-50">
+    <svg width="23" height="23" viewBox="0 0 22.5 21">
+      <Path
+        variants={{
+          closed: { d: "M 2 2.5 L 20 2.5" },
+          open: { d: "M 3 16.5 L 17 2.5" }
+        }}
+        />
+      <Path
+        d="M 2 9.423 L 20 9.423"
+        variants={{
+          closed: { opacity: 1 },
+          open: { opacity: 0 }
+        }}
+        transition={{ duration: 0.5 }}
+      />
+      <Path
+        variants={{
+          closed: { d: "M 2 16.346 L 20 16.346" },
+          open: { d: "M 3 2.5 L 17 16.346" }
+        }}
+      />
+    </svg>
+  </button>
+);
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -109,7 +107,7 @@ const sidebar = {
     transition: {
       delay: 0.5,
       type: "spring",
-      stiffness: 1000,
+      stiffness: 500,
       damping: 40
     }
   }
@@ -121,7 +119,7 @@ const MobileNav = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <nav className="absolute top-0 left-0 bottom-0 z-50">
+    <nav className="fixed top-0 left-0 bottom-0 z-50">
       <motion.nav
         className="w-[375px] z-50"
         initial={false}
@@ -129,8 +127,8 @@ const MobileNav = () => {
         custom={height}
         ref={containerRef}
       >
-        <motion.div className="absolute top-0 left-0 bottom-0 w-[375px] bg-lightGreen z-50" variants={sidebar} />
-        <Navigation />
+        <motion.div className="fixed top-0 left-0 bottom-0 w-[375px] bg-darkGreen z-50" variants={sidebar} />
+        <Navigation toggle={() => toggleOpen()} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
     </nav>

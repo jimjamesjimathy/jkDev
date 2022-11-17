@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import hero from '../assets/hero.webp';
+import hero from "../assets/hero.webp";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -10,92 +10,95 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id="home"
-      className=" gap-12 py-10 md:flex md:justify-between md:items-center h-screen"
+      className="z-20 py-10 flex flex-col items-center justify-center md:flex-row md:justify-center md:items-center h-screen"
     >
+      <div className="z-20 landing" />
       {/* IMAGE SECTION  */}
-      <div className="flex justify-center flex-1 md:justify-start mt-16 md:order-2 md:mt-32 z-10">
+      <div className="z-20 flex w-1/2 justify-center mx-auto mt-16 md:order-2 md:mt-32 ">
         {isAboveMediumScreens ? (
           <div
-            className="relative ml-20 before:absolute before:-top-[3%] before:-left-[9%] before:rounded-t-[400px]
-                before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-4 before:border-lightRed before:z-[-1]"
+            className="z-20 relative ml-20 before:absolute before:-top-[3%] before:-left-[19%]
+                before:w-full before:rounded-[200px] before:max-w-[400px] md:before:max-w-[600px] before:h-full before:bg-red before:bg-opacity-30 before:z-[-1]"
           >
             <img
               alt="profile"
               src={hero}
-              className="rounded-t-[400px] w-full max-w-[200px] md:max-w-[350px]"
+              className="z-20 rounded-t-[400px] w-full max-w-[200px] md:max-w-[350px] hover:filter hover:greyscale transition duration-500"
             />
           </div>
         ) : (
           <img
             alt="profile"
             src={hero}
-            className=" w-full max-w-[175px] rounded-full md:max-w-[455px]"
+            className="z-20 w-full max-w-[175px] rounded-full md:max-w-[455px] mt-[-75px] hover:filter hover:greyscale transition duration-500"
           />
         )}
       </div>
       {/* MAIN SECTION  */}
-      <div className="flex-1 mt-12 md:mt-32 z-10">
+      <div className="z-20 flex md:w-1/2 flex-col items-center md:items-start mt-12 md:mt-32">
         {/* HEADINGS */}
         <motion.div
-          className="md:mb-2"
+          className="z-20 md:mb-2"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-md text-center md:mb-[-10px] md:text-start md:w-[20em] mx-auto">
-            <span className="font-bold text-lightGreen z-10">Howdy!</span> My name is
-            </p>
-          <p className="text-center text-4xl xs:text-5xl md:text-5xl text-red font-semibold">
+          <p className="z-20 text-sm text-center md:text-start mx-auto">
+            <span className="z-20 font-bold text-lightGreen ">Howdy!</span> My
+            name is
+          </p>
+          <p className="z-20 text-center text-4xl sm:text-5xl lg:text-6xl text-red font-meduim">
             James {""}
-            <span className="xs:relative font-normal text-[#F5F5F5]">
-              Kirkwood
-            </span>
+            <span className="z-20 text-accentText">Kirkwood</span>
           </p>
         </motion.div>
 
         <motion.div
-        className="mb-4 "
+          className="z-20 mb-4 w-2/3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-xl sm:text-2xl text-center ">I am a 
-          <span className="text-lightGreen font-bold"> Full Stack Developer </span>
+          <p className="z-20 text-lg text-center md:text-start sm:text-xl">
+            I am a
+            <span className="z-20 text-lightGreen"> Full Stack Developer </span>
           </p>
         </motion.div>
 
         <motion.div
-        className=""
+          className="z-20 flex justify-start"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ delay: 0.5, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="hidden xs:block text-sm md:text-md font-medium tracking-wide text-center mb-7">
-          I specialize in front-end development, and I love to create websites, applications, and games for a range of different customers.
+          <p className="z-20 mx-auto xs:block mb-6 text-sm text-center md:mx-0 md:text-start font-medium tracking-wide w-2/3 md:w-[65%]">
+            I specialize in front-end development, and I love to create
+            websites, applications, and games for a range of different
+            customers.
           </p>
         </motion.div>
 
         {/* CALL TO ACTIONS */}
         <motion.div
-          className="flex justify-center sm:mt-5"
+          className="z-20 sm:mt-5"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ delay: 0.7, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
@@ -103,26 +106,25 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="py-2 text-xs xs:text-lg transition duration-500 px-7 border-2 font-medium tracking-wide border-red hover:border-lightBlue"
+            className="z-20 py-2 text-xs xs:text-lg transition duration-500 px-7 border-2 font-medium tracking-wide border-red hover:border-lightBlue"
             onClick={() => setSelectedPage("contact")}
-            href="contact"
+            href="#contact"
           >
             Let's create something together!
           </AnchorLink>
         </motion.div>
 
         <motion.div
-          className="flex justify-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ delay: 1, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-            <SocialMediaIcons />
+          <SocialMediaIcons />
         </motion.div>
       </div>
     </section>

@@ -1,136 +1,143 @@
-import LineGradient from '../components/LineGradient';
-import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
+import LineGradient from "../components/LineGradient";
+import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import contact from '../assets/contact.jpg';
-
 
 const Contact = () => {
   const {
     register,
     trigger,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (e) => {
+    console.log("~ e", e);
     const isValid = await trigger();
     if (!isValid) {
       e.preventDefault();
     }
-  }
+  };
 
   return (
-    <section id="contact" className="py-48">
+    <section id="contact" className="z-20 contact py-48">
+      {/* HEADINGS */}
       <motion.div
-        className='flex justify-end w-full'
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
-          hidden: { opacity: 0, x: -100 },
-          visible: { opacity: 1, x: 0 }
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0 },
         }}
+        className="z-20 flex justify-end w-full"
       >
         <div>
-          <p className="font-normal text-4xl">
-            Let's <span className="text-red">work</span> together!
+          <p className="z-20 font-normal text-4xl">
+            Let's <span className="z-20 text-lightBlue font-bold">create</span> something together 
           </p>
-          <div className="flex md:justify-end my-5">
-            <LineGradient width="w-full" />
+          <div className="z-20 flex md:justify-end my-5">
+            <LineGradient width="w-1/2" />
           </div>
         </div>
       </motion.div>
 
-      <div className="md:flex md:justify-between gap-16 mt-5">
+      {/* FORM & IMAGE */}
+      <div className="z-20 md:flex md:justify-between gap-16 mt-5">
         <motion.div
-          className='basis-1/2 flex justify-center'
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, y: -100 },
-            visible: { opacity: 1, y: 0 }
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
           }}
+          className="z-20 basis-1/2 flex justify-center"
         >
           <img src={contact} alt="contact" />
         </motion.div>
 
         <motion.div
-          className='basis-1/2 mt-10 md:mt-0'
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, y: -100 },
-            visible: { opacity: 1, y: 0 }
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
           }}
+          className="z-20 basis-1/2 mt-10 md:mt-0"
         >
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/ce202887be9205cb758ea04ac3851853"
+            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
             method="POST"
           >
             <input
-              className='w-full bg-blue2 placeholder-opaque-black p-3'
+              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3"
               type="text"
-              placeholder='NAME'
+              placeholder="NAME"
               {...register("name", {
                 required: true,
-                maxLength: 75,
+                maxLength: 100,
               })}
             />
             {errors.name && (
-              <p className='text-lightRed mt-1'>
-                {errors.name.type === "required" && "Ahhh c'mon, don't be shy!"}
-                {errors.name.type === "maxLength" && "That's quite a name you got there. I can only handle 75 characters."}
+              <p className="z-20 text-red mt-1">
+                {errors.name.type === "required" && "This field is required."}
+                {errors.name.type === "maxLength" && "Max length is 100 char."}
               </p>
             )}
-            <input 
-              className='w-full bg-blue2 placeholder-opaque-black p-3 mt-5'
+
+            <input
+              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3 mt-5"
               type="text"
-              placeholder='EMAIL'
+              placeholder="EMAIL"
               {...register("email", {
                 required: true,
-                pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               })}
             />
             {errors.email && (
-              <p className='text-lightRed mt-1'>
-                {errors.email.type === "required" && "Ahhh c'mon, don't be shy!"}
-                {errors.email.type === "pattern" && "That's not a real email! give me something good."}
+              <p className="z-20 text-red mt-1">
+                {errors.email.type === "required" && "This field is required."}
+                {errors.email.type === "pattern" && "Invalid email address."}
               </p>
             )}
-            <textarea 
-            rows="4"
-            cols="50"
-              className='w-full bg-blue2 placeholder-opaque-black p-3 mt-5'
-              type="text"
-              placeholder='MESSAGE'
+
+            <textarea
+              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3 mt-5"
+              name="message"
+              placeholder="MESSAGE"
+              rows="4"
+              cols="50"
               {...register("message", {
                 required: true,
-                maxLength: 2000, 
+                maxLength: 2000,
               })}
             />
             {errors.message && (
-              <p className='text-lightRed mt-1'>
-                {errors.message.type === "required" && "Ahhh c'mon, don't be shy!"}
-                {errors.message.type === "maxLength" && "Woah! I've allowed 2000 characters and you still have more to say?!"}
+              <p className="z-20 text-red mt-1">
+                {errors.message.type === "required" &&
+                  "This field is required."}
+                {errors.message.type === "maxLength" &&
+                  "Max length is 2000 char."}
               </p>
             )}
-              <button
-                type="submit"
-                className="p-5 bg-green text-darkest font-bold mt-5 hover:bg-lightGreen hover:text-white transition duration-300"
-              >
-                Fire Away!
-              </button>
+
+            <button
+              className="z-20 p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              type="submit"
+            >
+              SEND ME A MESSAGE
+            </button>
           </form>
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Contact;

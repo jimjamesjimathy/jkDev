@@ -6,7 +6,7 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.27,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -18,17 +18,17 @@ const projectVariant = {
 
 const Project = () => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-75 transition duration-500
-    bg-accentText z-30 flex flex-col justify-center items-center text-center p-16 text-darkest`;
+    bg-accentText z-30 flex flex-col justify-center items-center text-center p-16 text-darkest font-bold`;
 
   return (
     <>
       {projects.map(project => (
-        <motion.div variants={projectVariant} key={project.id} className="relative max-w-[450px] max-h-[500px]">
+        <motion.div variants={projectVariant} key={project.id} className="relative max-w-[475px] max-h-[235px]">
           <div className={overlayStyles}>
             <h1>{project.title}</h1>
             <p>{project.price}</p>
           </div>
-          <img src={project.img} alt={project.title} />
+          <img src={project.img} alt={project.title} className="relative max-w-[475px] max-h-[235px]" />
         </motion.div>
       ))}
     </>
@@ -42,7 +42,7 @@ const Projects = () => {
         className="mx-auto text-center w-full"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ delay: 0.2, duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, y: 100 },
@@ -62,19 +62,18 @@ const Projects = () => {
       {/* SERVICES */}
       <div className="flex justify-center ">
         <motion.div
-          className="grid sm:grid-cols-2 md:grid-cols-3 "
+          className="grid sm:grid-cols-2 md:grid-cols-3"
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           <div
-            className="flex justify-center text-center items-center p-10 bg-red
+            className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[450px] max-h-[500px] text-xl font-poppins font-normal "
           >
             My Recent Projects:
           </div>
-
           <Project />
         </motion.div>
       </div>
@@ -83,3 +82,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+// 1397 X 969
