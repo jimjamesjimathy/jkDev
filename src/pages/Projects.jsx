@@ -69,7 +69,7 @@ const Projects = () => {
           viewport={{ once: false, amount: 0.2 }}
         >
           <div
-            className="flex justify-center text-center items-center p-10 bg-brown
+            className="transition duration-500 flex justify-center text-center items-center p-10 hover:bg-lightBlue hover:text-darkest bg-brown font-bold
               max-w-[475px] max-h-[235px] text-xl font-poppins font-normal "
           >
             My Recent Projects:
