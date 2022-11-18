@@ -23,14 +23,14 @@ const Landing = ({ setSelectedPage }) => {
             <img
               alt="profile"
               src={hero}
-              className="z-20 rounded-t-[400px] w-full max-w-[200px] md:max-w-[350px] hover:filter hover:greyscale transition duration-500"
+              className="z-20 rounded-t-[400px] w-full max-w-[200px] md:max-w-[350px]"
             />
           </div>
         ) : (
           <img
             alt="profile"
             src={hero}
-            className="z-20 w-full max-w-[175px] rounded-full md:max-w-[455px] mt-[-75px] hover:filter hover:greyscale transition duration-500"
+            className="z-20 w-full max-w-[175px] rounded-full md:max-w-[455px] mt-[-75px]"
           />
         )}
       </div>
@@ -106,11 +106,11 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="z-20 py-2 text-xs xs:text-lg transition duration-500 px-7 border-2 font-medium tracking-wide border-red hover:border-lightBlue"
+            className="z-20 py-2 text-xs xs:text-lg transition duration-500 px-7 border-2 font-medium tracking-wide border-red hover:border-green hover:bg-green hover:bg-opacity-50 bg-red bg-opacity-50"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            Let's create something together!
+            Contact Me
           </AnchorLink>
         </motion.div>
 
