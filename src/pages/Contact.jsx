@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="z-20 contact py-48">
+    <section id="contact" className="h-screen py-48 contact">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -30,20 +30,20 @@ const Contact = () => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="z-20 flex justify-end w-full"
+        className="flex justify-center w-full md:justify-end"
       >
         <div>
-          <p className="z-20 font-normal text-4xl">
-            Let's <span className="z-20 text-lightBlue font-bold">create</span> something together 
+          <p className="text-4xl font-normal text-center">
+            Let's <span className="font-bold text-lightBlue">create</span> something together 
           </p>
-          <div className="z-20 flex md:justify-end my-5">
-            <LineGradient width="w-1/2" />
+          <div className="flex my-5 md:justify-end">
+            <LineGradient width="w-full md:w-[40em]" />
           </div>
         </div>
       </motion.div>
 
       {/* FORM & IMAGE */}
-      <div className="z-20 md:flex md:justify-between md:items-center gap-16 mt-5">
+      <div className="gap-16 mt-5 md:flex md:justify-between md:items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -53,9 +53,9 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="z-20 basis-1/2 flex justify-center"
+          className="flex justify-center basis-1/2"
         >
-          <img src={contact} alt="contact" className="rounded-md" />
+          <img src={contact} alt="contact" className="hidden md:block rounded-md max-w-[450px]" />
         </motion.div>
 
         <motion.div
@@ -67,7 +67,7 @@ const Contact = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className="z-20 basis-1/2 mt-10 md:mt-0"
+          className="mt-10 basis-1/2 md:mt-0"
         >
           <form
             target="_blank"
@@ -76,7 +76,7 @@ const Contact = () => {
             method="POST"
           >
             <input
-              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3"
+              className="w-full p-3 font-semibold bg-accentBlue placeholder-opaque-black"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -85,14 +85,14 @@ const Contact = () => {
               })}
             />
             {errors.name && (
-              <p className="z-20 text-red mt-1">
+              <p className="mt-1 text-red">
                 {errors.name.type === "required" && "This field is required."}
                 {errors.name.type === "maxLength" && "Max length is 100 char."}
               </p>
             )}
 
             <input
-              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full p-3 mt-5 font-semibold bg-accentBlue placeholder-opaque-black"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -101,14 +101,14 @@ const Contact = () => {
               })}
             />
             {errors.email && (
-              <p className="z-20 text-red mt-1">
+              <p className="mt-1 text-red">
                 {errors.email.type === "required" && "This field is required."}
                 {errors.email.type === "pattern" && "Invalid email address."}
               </p>
             )}
 
             <textarea
-              className="z-20 w-full bg-accentBlue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full p-3 mt-5 font-semibold bg-accentBlue placeholder-opaque-black"
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -119,7 +119,7 @@ const Contact = () => {
               })}
             />
             {errors.message && (
-              <p className="z-20 text-red mt-1">
+              <p className="mt-1 text-red">
                 {errors.message.type === "required" &&
                   "This field is required."}
                 {errors.message.type === "maxLength" &&
@@ -128,7 +128,7 @@ const Contact = () => {
             )}
 
             <button
-              className="z-20 p-5 bg-darkGreen rounded-md font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="p-5 mt-5 font-semibold transition duration-500 rounded-md bg-darkGreen text-deep-blue hover:bg-red hover:text-white"
               type="submit"
             >
               SEND ME A MESSAGE

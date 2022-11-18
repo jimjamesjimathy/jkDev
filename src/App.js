@@ -53,7 +53,7 @@ function App() {
       </div>
       <LineGradient />
       <div className="relative w-5/6 mx-auto md:h-full">
-        <div className="about-clip absolute h-screen w-full bg-green" />
+        <div className="absolute hidden w-full h-screen opacity-50 about-clip bg-green md:block" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
@@ -65,8 +65,8 @@ function App() {
         </div>
         <LineGradient />
 
-        <div className="relative w-5/6 mx-auto md:h-screen">
-        <div className="portfolio-clip absolute h-full w-full bg-blue" />
+        <div className="relative w-5/6 mx-auto">
+        <div className="absolute hidden w-full h-full opacity-50 portfolio-clip bg-blue md:block" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
@@ -78,7 +78,7 @@ function App() {
         </div>
         <LineGradient />
         <div className="relative w-5/6 mx-auto md:h-full">
-        <div className="contact-clip absolute h-screen w-full bg-red" />
+        <div className="absolute hidden w-full h-screen opacity-50 contact-clip bg-red md:block" />
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
