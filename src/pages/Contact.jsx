@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="h-screen py-48 contact">
+    <section id="contact" className="w-5/6 h-screen py-12 mx-auto md:py-48">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -33,7 +33,7 @@ const Contact = () => {
         className="flex justify-center w-full md:justify-end"
       >
         <div>
-          <p className="text-4xl font-normal text-center">
+          <p className="text-2xl font-normal text-center md:text-4xl">
             Let's <span className="font-bold text-lightBlue">create</span> something together 
           </p>
           <div className="flex my-5 md:justify-end">

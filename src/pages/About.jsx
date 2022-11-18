@@ -25,20 +25,19 @@ const About = () => {
 
   return (
     <section id="about" className="z-10 pt-10 pb-24">
-      {/* HEADER AND IMAGE SECTION */}
       <div className="z-10 mt-24 text-center md:text-start md:items-center md:flex md:justify-between md:gap-16">
         <motion.div
           className="z-10 md:w-1/3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="mb-5 tracking-wide text-7xl font-neucha">
+          <p className="mb-5 tracking-wide text-7xl ">
             <span className="text-blue">About </span> Me
           </p>
           <LineGradient width="w-5/7 md:w-full" />
@@ -63,48 +62,42 @@ const About = () => {
       </div>
 
       <div className="gap-8 md:flex md:justify-between">
-        {/* SKILLS */}
         <motion.div
           className="z-10 flex-1 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 100 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32">
+          <div className="relative h-32 mt-8">
             <div className="z-10">
               <p className="text-3xl font-quicksand">1.</p>
-              <p className="mt-6 text-4xl tracking-widest font-neucha">
+              <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
                 School Experience
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-red" />
+            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-red" />
           </div>
-          <p className="mt-5 mb-4 text-center">
-            <span className="font-bold">Bloom Institute of Technology</span>{" "}
-            <span className="italic font-semibold">FKA Lambda School</span>,
-            Full-Time Program, Full Stack Development
-          </p>
 
           {/* SCHOOL EXPERIENCE  */}
 
           <motion.div
             initial={false}
             animate={school ? "open" : "closed"}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center mt-6"
           >
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setSchool(!school)}
-              className="mb-2"
+              className="px-4 py-1 mb-2 border-2 border-red"
             >
-              Read More
+              { school ? "Close" : "Read More"}
             </motion.button>
             <motion.div
               variants={{
@@ -112,8 +105,8 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
-                    delayChildren: 0.3,
+                    duration: 0.2,
+                    delayChildren: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
@@ -121,13 +114,21 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
+                    duration: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
               }}
               style={{ pointerEvents: school ? "auto" : "none" }}
             >
+              <motion.p
+                variants={itemVariants}
+                className="mt-5 mb-4 text-center"
+              >
+                <span className="font-bold">Bloom Institute of Technology</span>{" "}
+                <span className="italic font-semibold">FKA Lambda School</span>,
+                Full-Time Program, Full Stack Development
+              </motion.p>
               <motion.p variants={itemVariants} className="font-bold text-md">
                 Frontend: {""}
                 <span className="text-sm font-normal">
@@ -152,38 +153,36 @@ const About = () => {
           className="z-10 flex-1 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 100 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32">
+          <div className="relative h-32 mt-8">
             <div className="z-10">
               <p className="text-3xl font-quicksand">2.</p>
-              <p className="mt-6 text-4xl tracking-widest font-neucha">
+              <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
                 Work Experience
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-brown" />
+            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-brown" />
           </div>
-          <p className="mt-5 mb-2 font-bold text-center">
-            Coderheros, Team Project Manager
-          </p>
+
           <motion.div
             initial={false}
             animate={work ? "open" : "closed"}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center mt-6"
           >
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setWork(!work)}
-              className="mb-2"
+              className="px-4 py-1 mb-2 border-2 border-brown"
             >
-              Read More
+              { work ? "Close" : "Read More"}
             </motion.button>
             <motion.ul
               variants={{
@@ -191,8 +190,8 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
-                    delayChildren: 0.3,
+                    duration: 0.2,
+                    delayChildren: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
@@ -200,7 +199,7 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
+                    duration: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
@@ -208,6 +207,12 @@ const About = () => {
               style={{ pointerEvents: work ? "auto" : "none" }}
               className="flex flex-col items-center justify-center list-disc"
             >
+              <motion.p
+                variants={itemVariants}
+                className="my-2 font-bold text-center "
+              >
+                Coderheros, Team Project Manager
+              </motion.p>
               <motion.li variants={itemVariants} className="text-sm">
                 Collaborated with a remote cross-functional 26-person team to
                 onboard and ship features in under one month
@@ -234,38 +239,34 @@ const About = () => {
           className="z-10 flex-1 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.4, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 100 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32">
+          <div className="relative h-32 mt-8">
             <div className="z-10">
               <p className="text-3xl">3.</p>
-              <p className="mt-6 text-4xl tracking-widest">Life Experience</p>
+              <p className="mt-6 tracking-widest sm:text-2xl lg:text-3xl">Life Experience</p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-blue" />
+            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-blue" />
           </div>
-            <p variants={itemVariants} className="mt-5 text-sm text-center">
-              I am originally from San Marcos, TX, but I currently reside in
-              Cleveland, OH. I have my sights set on moving to Seattle, WA.
-            </p>
 
           <motion.div
             initial={false}
             animate={life ? "open" : "closed"}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center mt-6"
           >
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setLife(!life)}
-              className="mb-2"
+              className="px-4 py-1 mb-2 border-2 border-blue"
             >
-              Read More
+              {life ? "Close" : "Read More"}
             </motion.button>
             <motion.div
               variants={{
@@ -273,8 +274,8 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
-                    delayChildren: 0.3,
+                    duration: 0.2,
+                    delayChildren: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
@@ -282,24 +283,29 @@ const About = () => {
                   transition: {
                     type: "spring",
                     bounce: 0,
-                    duration: 0.3,
+                    duration: 0.2,
                     staggerChildren: 0.2,
                   },
                 },
               }}
               style={{ pointerEvents: life ? "auto" : "none" }}
             >
-
-
-          <motion.p variants={itemVariants} className="mt-5 text-sm">
-            Outside of the coding world I like to keep busy, I play 5
-            instruments, write, record and produce my own music. I also have
-            become fond of making comedy skits and doing my best to make people
-            laugh. Everyone I know calls me a dad without kids because of my
-            jokes, and I say that makes me a faux pa 😎
-          </motion.p>
-        </motion.div>
-        </motion.div>
+              <motion.p
+                variants={itemVariants}
+                className="mt-5 text-sm text-center"
+              >
+                I am originally from San Marcos, TX, but I currently reside in
+                Cleveland, OH. I have my sights set on moving to Seattle, WA.
+              </motion.p>
+              <motion.p variants={itemVariants} className="mt-5 text-sm text-center">
+                Outside of the coding world I like to keep busy, I play 5
+                instruments, write, record and produce my own music. I also have
+                become fond of making comedy skits and doing my best to make
+                people laugh. Everyone I know calls me a dad without kids
+                because of my jokes, and I say that makes me a faux pa 😎
+              </motion.p>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

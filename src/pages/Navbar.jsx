@@ -8,7 +8,9 @@ export const Link = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? "text-lightRed font-bold uppercase" : ""
+        selectedPage === lowerCasePage
+          ? "text-lightRed font-bold uppercase"
+          : ""
       }
             hover:text-red-900 transition duration-500`}
       href={`#${lowerCasePage}`}
@@ -20,17 +22,20 @@ export const Link = ({ page, selectedPage, setSelectedPage }) => {
 };
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
-  const isDesktop = useMediaQuery("(min-width: 1060px)");
-  const navbarBackground = isTopOfPage ? "" : "z-50 bg-darkest border-b-2 border-darkest shadow-xl shadow-opaque-black";
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const navbarBackground = isTopOfPage
+    ? ""
+    : "z-50 bg-darkest border-b-2 border-darkest shadow-xl shadow-opaque-black";
 
   return (
-    <nav className={`${navbarBackground} z-50 w-full md:fixed top-0 py-6`}>
-      <div className="flex justify-end items-center md:justify-between w-5/6 mx-auto">
-        <div className="text-xl flex items-center justify-between">
-            <h4 className="text-green font-medium">
-              JK
-              <span className="text-red mx-2">||</span>
-              DEV</h4>
+    <nav className={`${navbarBackground} relative z-50 w-full md:fixed top-0 py-6`}>
+      <div className="flex items-center justify-between w-5/6 mx-auto">
+        <div className="flex items-center justify-between text-xl">
+          <h4 className="font-medium text-green">
+            JK
+            <span className="mx-2 text-red">||</span>
+            DEV
+          </h4>
         </div>
         {isDesktop ? (
           <ul className={"flex space-x-8 font-semibold text-md"}>
@@ -47,6 +52,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         ) : (
           <MobileNav
             isDesktop={isDesktop}
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
           />
         )}
       </div>
