@@ -19,10 +19,6 @@ const About = () => {
   const [work, setWork] = useState(false);
   const [life, setLife] = useState(false);
 
-
-
-
-
   return (
     <section id="about" className="z-10 pt-10 pb-24">
       <div className="z-10 mt-24 text-center md:text-start md:items-center md:flex md:justify-between md:gap-16">
@@ -73,7 +69,7 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-8">
+          <div className="relative h-32 mt-12">
             <div className="z-10">
               <p className="text-3xl font-quicksand">1.</p>
               <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
@@ -160,7 +156,7 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-8">
+          <div className="relative h-32 mt-12">
             <div className="z-10">
               <p className="text-3xl font-quicksand">2.</p>
               <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
@@ -246,7 +242,7 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-8">
+          <div className="relative h-32 mt-12">
             <div className="z-10">
               <p className="text-3xl">3.</p>
               <p className="mt-6 tracking-widest sm:text-2xl lg:text-3xl">Life Experience</p>

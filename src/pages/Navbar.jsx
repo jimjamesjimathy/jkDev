@@ -50,11 +50,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             ))}
           </ul>
         ) : (
-          <MobileNav
-            isDesktop={isDesktop}
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-          />
+          <MobileNav />
         )}
       </div>
     </nav>
