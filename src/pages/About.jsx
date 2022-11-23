@@ -76,7 +76,7 @@ const About = () => {
                 School Experience
               </p>
             </div>
-            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-red" />
+            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-red" />
           </div>
 
           {/* SCHOOL EXPERIENCE  */}
@@ -91,7 +91,7 @@ const About = () => {
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setSchool(!school)}
-              className="px-4 py-1 mb-2 border-2 border-red"
+              className="px-4 py-1 mb-2 border-4 border-white"
             >
               { school ? "Close" : "Read More"}
             </motion.button>
@@ -115,7 +115,6 @@ const About = () => {
                   },
                 },
               }}
-              style={{ pointerEvents: school ? "auto" : "none" }}
             >
               <motion.p
                 variants={itemVariants}
@@ -163,7 +162,7 @@ const About = () => {
                 Work Experience
               </p>
             </div>
-            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-brown" />
+            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-brown" />
           </div>
 
           <motion.div
@@ -176,7 +175,7 @@ const About = () => {
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setWork(!work)}
-              className="px-4 py-1 mb-2 border-2 border-brown"
+              className="px-4 py-1 mb-2 border-4 border-white"
             >
               { work ? "Close" : "Read More"}
             </motion.button>
@@ -200,7 +199,6 @@ const About = () => {
                   },
                 },
               }}
-              style={{ pointerEvents: work ? "auto" : "none" }}
               className="flex flex-col items-center justify-center list-disc"
             >
               <motion.p
@@ -247,7 +245,7 @@ const About = () => {
               <p className="text-3xl">3.</p>
               <p className="mt-6 tracking-widest sm:text-2xl lg:text-3xl">Life Experience</p>
             </div>
-            <div className="w-5/6 md:w-3/4 h-32 absolute right-0 top-0 z-[-1] bg-blue" />
+            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-blue" />
           </div>
 
           <motion.div
@@ -260,7 +258,7 @@ const About = () => {
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.1 }}
               onClick={() => setLife(!life)}
-              className="px-4 py-1 mb-2 border-2 border-blue"
+              className="px-4 py-1 mb-2 border-4 border-white"
             >
               {life ? "Close" : "Read More"}
             </motion.button>
@@ -284,7 +282,6 @@ const About = () => {
                   },
                 },
               }}
-              style={{ pointerEvents: life ? "auto" : "none" }}
             >
               <motion.p
                 variants={itemVariants}

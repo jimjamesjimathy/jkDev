@@ -27,8 +27,8 @@ module.exports = {
           "linear-gradient(90deg, #B5432C 14.53%, #CF533A 69.36%, #D3614A 117.73%)",
       }),
       fontFamily: {
-        covered: ["Covered By Your Grace", "san-serif"],
-        quicksand: ["Quicksand", "serif"],
+        covered: ["Covered By Your Grace", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
     },
     screens: {
