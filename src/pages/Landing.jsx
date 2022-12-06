@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-import hero from "../assets/hero.webp";
+import hero from "../assets/hero-cartoon.png";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -17,8 +17,8 @@ const Landing = ({ setSelectedPage }) => {
       <div className="z-20 flex justify-center w-1/2 mx-auto mt-16 md:order-2 md:mt-32 ">
         {isAboveMediumScreens ? (
           <div
-            className="z-20 relative ml-20 before:absolute before:-top-[3%] before:-left-[19%]
-                before:w-full before:rounded-[200px] before:max-w-[400px] md:before:max-w-[600px] before:h-full before:bg-red before:bg-opacity-30 before:z-[-1]"
+            className="z-20 relative ml-20 before:absolute before:top-0 before:-left-[19%]
+                before:w-full before:rounded-[200px] before:max-w-[400px] md:before:max-w-[600px] before:h-[90%] before:bg-lightRed before:bg-opacity-30 before:z-[-1]"
           >
             <img
               alt="profile"
@@ -35,7 +35,7 @@ const Landing = ({ setSelectedPage }) => {
         )}
       </div>
       {/* MAIN SECTION  */}
-      <div className="z-20 flex flex-col items-center mt-12  md:w-1/2 md:items-start md:mt-32">
+      <div className="z-20 flex flex-col items-center mt-12 md:w-1/2 md:items-start md:mt-32">
         {/* HEADINGS */}
         <motion.div
           className="z-20 md:mb-2"
