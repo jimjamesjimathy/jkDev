@@ -1,86 +1,80 @@
-import admin from './assets/admin.webp';
-import lit from './assets/literary.webp';
-import instaJam from './assets/instaJam.png';
-import eCom from './assets/eCommerce.png';
-import fight from './assets/fight.webp';
-import realEstate from './assets/real-estate.png';
-import hotel from './assets/hotel.webp';
-import memory from './assets/memory.png';
+import admin from "./assets/admin.webp";
+import lit from "./assets/literary.webp";
+import instaJam from "./assets/instaJam.png";
+import eCom from "./assets/eCommerce.png";
+import fight from "./assets/fight.webp";
+import realEstate from "./assets/real-estate.png";
+import hotel from "./assets/hotel.webp";
+import memory from "./assets/memory.png";
 
 export const navigation = [
-    {
-      id: 1,
-      name: "home",
-    },
-    {
-      id: 2,
-      name: "about",
-    },
-    {
-      id: 3,
-      name: "portfolio",
-    },
-    {
-      id: 4,
-      name: "contact",
-    },
-  ];
+  {
+    id: 1,
+    name: "home",
+  },
+  {
+    id: 2,
+    name: "about",
+  },
+  {
+    id: 3,
+    name: "portfolio",
+  },
+  {
+    id: 4,
+    name: "contact",
+  },
+];
 
 export const projects = [
   {
     id: 1,
-    title: 'Admin Dashboard',
+    title: "Admin Dashboard",
     img: admin,
-    languages: '',
-    link: '',
+    languages: "",
+    code: "https://github.com/jimjamesjimathy/admin-dashboard",
+    demo: "https://admin-dashboard-murex-iota.vercel.app/",
   },
   {
     id: 2,
-    title: 'Restauraunt Site',
+    title: "Restauraunt Site",
     img: lit,
-    languages: '',
-    link: '',
+    code: "https://github.com/jimjamesjimathy/LIT",
+    demo: "https://restaurant-site-one.vercel.app/",
   },
   {
     id: 3,
-    title: 'Social Media App',
+    title: "Social Media App",
     img: instaJam,
-    languages: '',
-    link: '',
+    code: "https://github.com/jimjamesjimathy/instaJam",
+    demo: "",
   },
   {
     id: 4,
-    title: 'Ecommerce Site',
-    img: eCom,
-    languages: '',
-    link: '',
+    title: "2 Player Fighting Game",
+    img: fight,
+    code: "https://github.com/jimjamesjimathy/fightMania",
+    demo: "https://fight-mania.vercel.app/",
   },
   {
     id: 5,
-    title: '2 Player Fighting Game',
-    img: fight,
-    languages: '',
-    link: '',
+    title: "Ecommerce Site",
+    img: eCom,
+    code: "https://github.com/jimjamesjimathy/e-commerce",
+    demo: "",
   },
   {
     id: 6,
-    title: 'Real Estate Site',
-    img: realEstate,
-    languages: '',
-    link: '',
+    title: "Hotel Booking Site",
+    img: hotel,
+    code: "https://github.com/jimjamesjimathy/hotel-fullstack",
+    demo: "",
   },
   {
     id: 7,
-    title: 'Hotel Booking Site',
-    img: hotel,
-    languages: '',
-    link: '',
-  },
-  {
-    id: 8,
-    title: 'Memory Game',
+    title: "Memory Game",
     img: memory,
-    languages: '',
-    link: '',
-  }
-]
+    code: "https://github.com/jimjamesjimathy/memoryJam",
+    demo: "https://memory-jam-oqo7.vercel.app/",
+  },
+];

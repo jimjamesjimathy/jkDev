@@ -28,14 +28,18 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     : "z-50 bg-darkest border-b-2 border-darkest shadow-xl shadow-opaque-black";
 
   return (
-    <nav className={`${navbarBackground} relative z-50 w-full md:fixed top-0 py-6`}>
+    <nav
+      className={`${navbarBackground} relative z-50 w-full md:fixed top-0 py-6`}
+    >
       <div className="flex items-center justify-between w-5/6 mx-auto">
         <div className="flex items-center justify-between text-xl">
-          <h4 className="font-medium text-green">
-            JK
-            <span className="mx-2 text-red">||</span>
-            DEV
-          </h4>
+          <AnchorLink onClick={() => setSelectedPage("home")} href="#home">
+            <h4 className="font-medium text-green">
+              JK
+              <span className="mx-2 text-red">||</span>
+              DEV
+            </h4>
+          </AnchorLink>
         </div>
         {isDesktop ? (
           <ul className={"flex space-x-8 font-semibold text-md"}>
@@ -50,7 +54,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             ))}
           </ul>
         ) : (
-          <MobileNav 
+          <MobileNav
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />

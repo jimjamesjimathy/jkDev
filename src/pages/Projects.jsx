@@ -18,7 +18,7 @@ const projectVariant = {
 
 const Project = () => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-75 transition duration-500
-    bg-accentText z-30 flex flex-col justify-center items-center text-center p-16 text-darkest font-bold`;
+    bg-accentText z-30 flex flex-col justify-between items-center text-center p-16 text-darkest font-bold`;
 
   return (
     <>
@@ -26,16 +26,36 @@ const Project = () => {
         <motion.div
           variants={projectVariant}
           key={project.id}
-          className="relative max-w-[475px] max-h-[235px]"
+          className="relative max-w-[450px] max-h-[235px] overflow-hidden"
         >
           <div className={overlayStyles}>
             <h1>{project.title}</h1>
-            <p>{project.price}</p>
+            <div className="flex w-full items-center justify-between">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={project.demo}
+                className="bg-lightBlue px-4 py-2 text-white rounded-md hover:bg-blue transition duration-300"
+              >
+                <button>Demo</button>
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={project.code}
+                className="bg-lightBlue px-4 py-2 text-white rounded-md hover:bg-blue transition duration-300"
+              >
+                <button>Code</button>
+              </a>
+            </div>
           </div>
           <img
             src={project.img}
             alt={project.title}
-            className="relative max-w-[475px] max-h-[235px]"
+            className="w-full relative max-w-[450px] max-h-[235px]"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </motion.div>
       ))}
@@ -78,7 +98,7 @@ const Projects = () => {
         >
           <div
             className="transition duration-500 flex justify-center text-center items-center p-10 hover:bg-lightBlue hover:text-darkest bg-brown font-bold
-              max-w-[475px] max-h-[235px] text-xl font-poppins font-normal "
+              max-w-[475px] max-h-[235px] text-xl font-poppins"
           >
             My Recent Projects:
           </div>
