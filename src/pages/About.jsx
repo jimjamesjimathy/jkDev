@@ -20,7 +20,7 @@ const About = () => {
   const [life, setLife] = useState(false);
 
   return (
-    <section id="about" className="z-10 pt-10 pb-24">
+    <section id="about" className="z-10 pt-10 mb-6">
       <div className="z-10 mt-24 text-center md:text-start md:items-center md:flex md:justify-between md:gap-16">
         <motion.div
           className="z-10 md:w-1/3"
@@ -69,14 +69,11 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-12">
-            <div className="z-10">
-              <p className="text-3xl font-quicksand">1.</p>
-              <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
+          <div className="relative h-32 mt-6 flex items-center">
+              <p className="text-2xl tracking-widest lg:text-3xl">
                 School Experience
               </p>
-            </div>
-            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-red" />
+            <div className="w-5/6 md:w-3/4 h-5/6 md:h-[13em] absolute right-0 top-0 z-[-1] bg-red" />
           </div>
 
           {/* SCHOOL EXPERIENCE  */}
@@ -89,9 +86,9 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.1 }}
+              transition={{ duration: .1 }}
               onClick={() => setSchool(!school)}
-              className="px-4 py-1 mb-2 border-4 border-white"
+              className="px-4 py-1 mb-2 border rounded-sm border-white"
             >
               { school ? "Close" : "Read More"}
             </motion.button>
@@ -155,14 +152,11 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-12">
-            <div className="z-10">
-              <p className="text-3xl font-quicksand">2.</p>
-              <p className="mt-6 text-2xl tracking-widest lg:text-3xl ">
+          <div className="relative h-32 mt-6 flex items-center">
+              <p className="text-2xl tracking-widest lg:text-3xl">
                 Work Experience
               </p>
-            </div>
-            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-brown" />
+            <div className="w-5/6 md:w-3/4 h-5/6 md:h-[13em] absolute right-0 top-0 z-[-1] bg-brown" />
           </div>
 
           <motion.div
@@ -173,9 +167,9 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.1 }}
+              transition={{ duration: .1 }}
               onClick={() => setWork(!work)}
-              className="px-4 py-1 mb-2 border-4 border-white"
+              className="px-4 py-1 mb-2 border rounded-sm border-white"
             >
               { work ? "Close" : "Read More"}
             </motion.button>
@@ -240,12 +234,11 @@ const About = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32 mt-12">
-            <div className="z-10">
-              <p className="text-3xl">3.</p>
-              <p className="mt-6 tracking-widest sm:text-2xl lg:text-3xl">Life Experience</p>
-            </div>
-            <div className="w-5/6 md:w-3/4 h-[13em] absolute right-0 top-0 z-[-1] bg-blue" />
+          <div className="relative h-32 mt-6 flex items-center">
+              <p className="text-2xl tracking-widest lg:text-3xl">
+                Life Experience
+              </p>
+            <div className="w-5/6 md:w-3/4 h-5/6 md:h-[13em] absolute right-0 top-0 z-[-1] bg-blue" />
           </div>
 
           <motion.div
@@ -256,9 +249,9 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.1 }}
+              transition={{ duration: .1 }}
               onClick={() => setLife(!life)}
-              className="px-4 py-1 mb-2 border-4 border-white"
+              className="px-4 py-1 mb-2 border rounded-sm border-white"
             >
               {life ? "Close" : "Read More"}
             </motion.button>

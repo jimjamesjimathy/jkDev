@@ -1,5 +1,5 @@
 import LineGradient from "../components/LineGradient";
-import { projects } from '../data';
+import { projects } from "../data";
 import { motion } from "framer-motion";
 
 const container = {
@@ -22,13 +22,21 @@ const Project = () => {
 
   return (
     <>
-      {projects.map(project => (
-        <motion.div variants={projectVariant} key={project.id} className="relative max-w-[475px] max-h-[235px]">
+      {projects.map((project) => (
+        <motion.div
+          variants={projectVariant}
+          key={project.id}
+          className="relative max-w-[475px] max-h-[235px]"
+        >
           <div className={overlayStyles}>
             <h1>{project.title}</h1>
             <p>{project.price}</p>
           </div>
-          <img src={project.img} alt={project.title} className="relative max-w-[475px] max-h-[235px]" />
+          <img
+            src={project.img}
+            alt={project.title}
+            className="relative max-w-[475px] max-h-[235px]"
+          />
         </motion.div>
       ))}
     </>
@@ -42,7 +50,7 @@ const Projects = () => {
         className="mx-auto text-center w-full"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ delay: 0.2, duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, y: 100 },
@@ -66,7 +74,7 @@ const Projects = () => {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <div
             className="transition duration-500 flex justify-center text-center items-center p-10 hover:bg-lightBlue hover:text-darkest bg-brown font-bold

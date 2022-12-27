@@ -1,7 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import contact from '../assets/contact.jpg';
+import contact from "../assets/contact.jpg";
 
 const Contact = () => {
   const {
@@ -24,7 +24,7 @@ const Contact = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, x: 50 },
@@ -34,7 +34,8 @@ const Contact = () => {
       >
         <div>
           <p className="text-2xl font-normal text-center md:text-4xl">
-            Let's <span className="font-bold text-lightBlue">create</span> something together 
+            Let's <span className="font-bold text-lightBlue">create</span>{" "}
+            something together
           </p>
           <div className="flex my-5 md:justify-end">
             <LineGradient width="w-full md:w-[40em]" />
@@ -47,7 +48,7 @@ const Contact = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -55,13 +56,17 @@ const Contact = () => {
           }}
           className="flex justify-center basis-1/2"
         >
-          <img src={contact} alt="contact" className="hidden md:block rounded-md max-w-[450px]" />
+          <img
+            src={contact}
+            alt="contact"
+            className="hidden md:block rounded-md max-w-[450px]"
+          />
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },

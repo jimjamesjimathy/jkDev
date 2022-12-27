@@ -41,7 +41,7 @@ const Landing = ({ setSelectedPage }) => {
           className="z-20 md:mb-2"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
@@ -62,7 +62,7 @@ const Landing = ({ setSelectedPage }) => {
           className="z-20 w-2/3 mb-4"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
@@ -71,7 +71,10 @@ const Landing = ({ setSelectedPage }) => {
         >
           <p className="z-20 text-lg text-center md:text-start sm:text-xl">
             I am a
-            <span className="z-20 md:text-lightGreen"> Full Stack Developer </span>
+            <span className="z-20 md:text-lightGreen">
+              {" "}
+              Full Stack Developer{" "}
+            </span>
           </p>
         </motion.div>
 
@@ -79,7 +82,7 @@ const Landing = ({ setSelectedPage }) => {
           className="z-20 flex justify-start"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.5, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
@@ -98,7 +101,7 @@ const Landing = ({ setSelectedPage }) => {
           className="z-20 sm:mt-5"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.7, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },
@@ -117,7 +120,7 @@ const Landing = ({ setSelectedPage }) => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 1, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -100 },

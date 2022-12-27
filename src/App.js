@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import useMediaQuery from "./hooks/useMediaQuery";
-import Navbar from './pages/Navbar';
-import DotGroup from './pages/DotGroup';
-import Landing from './pages/Landing';
-import LineGradient from './components/LineGradient';
-import About from './pages/About';
+import Navbar from "./pages/Navbar";
+import DotGroup from "./pages/DotGroup";
+import Landing from "./pages/Landing";
+import LineGradient from "./components/LineGradient";
+import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Footer from './pages/Footer';
-
+import Footer from "./pages/Footer";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -28,7 +27,6 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   return (
     <div className="App">
       <Navbar
@@ -36,6 +34,8 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+
+      {/* LANDING PAGE  */}
       <div className="w-5/6 mx-auto">
         {isDesktop && (
           <DotGroup
@@ -51,8 +51,11 @@ function App() {
           <Landing setSelectedPage={setSelectedPage} />
         </motion.div>
       </div>
+
       <LineGradient />
-      <div className="relative w-5/6 mx-auto h-auto">
+
+      {/* ABOUT PAGE  */}
+      <div className="relative w-5/6 mx-auto xl:h-screen">
         <motion.div
           margin="0 0 -200px 0"
           amount="all"
@@ -61,7 +64,10 @@ function App() {
           <About />
         </motion.div>
       </div>
+
       <LineGradient />
+
+      {/* PROJECTS PAGE  */}
       <div className="relative w-5/6 mx-auto md:h-full">
         <motion.div
           margin="0 0 -200px 0"
@@ -71,7 +77,10 @@ function App() {
           <Projects />
         </motion.div>
       </div>
+
       <LineGradient />
+
+      {/* CONTACT PAGE  */}
       <div className="relative w-5/6 mx-auto">
         <motion.div
           margin="0 0 -200px 0"
@@ -81,7 +90,10 @@ function App() {
           <Contact />
         </motion.div>
       </div>
+
       <LineGradient />
+
+      {/* FOOTER  */}
       <Footer />
     </div>
   );
