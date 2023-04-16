@@ -29,10 +29,21 @@ const containerItem = {
   },
 };
 
-const Details = ({ position, company, companyLink, time, address, work }) => {
+const Details = ({
+  position,
+  company,
+  companyLink,
+  time,
+  address,
+  work1,
+  work2,
+  work3,
+  work4,
+  work5,
+}) => {
   const ref = useRef(null);
   return (
-    <li className="my-8 first:mt-0 last:mb-0 w-[87%] mx-auto flex flex-col items-center justify-center">
+    <div className="ml-32 first:mb-24">
       <LiIcon reference={ref} />
       <motion.div variants={containerItem}>
         <h3 className="capitalize text-2xl text-black-200 dark:text-white">
@@ -44,9 +55,13 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         <span className="capitalize text-sixth italic">
           {time} | {address}
         </span>
-        <p className="w-full text-black-200 dark:text-white">{work}</p>
+        <p className="w-full text-black-200 dark:text-white">{work1}</p>
+        <p className="w-full text-black-200 dark:text-white">{work2}</p>
+        <p className="w-full text-black-200 dark:text-white">{work3}</p>
+        <p className="w-full text-black-200 dark:text-white">{work4}</p>
+        <p className="w-full text-black-200 dark:text-white">{work5}</p>
       </motion.div>
-    </li>
+    </div>
   );
 };
 
@@ -57,7 +72,7 @@ const Experience = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div>
+    <div className="w-full">
       <AnimatedText
         text="Experience"
         className="text-[4vw] justify-center font-light mb-8"
@@ -68,25 +83,24 @@ const Experience = () => {
           className="absolute left-9 top-0 w-[3px] h-full bg-tertiary origin-top"
         />
 
-        <motion.ul
+        <motion.div
           variants={container}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-start justify-between"
+          className="w-full flex flex-col items-start"
         >
           <Details
             position="team project manager / full stack developer"
             company="coder heros"
             companyLink="/"
             time="June 2022 - July 2022"
-            address="Chicago, IL"
-            work="Collaborated with a remote cross-functional 26-person team to onboard and ship features in under one month
-            Conducted code reviews, approved Pull Requests, and led team meetings to ensure tasks were completed
-            Pitched design ideas made with Figma to the stakeholders weekly, and also showcased newly implemented features 
-            Utilized Ant-Design and Less to style landing pages and implemented media queries to ensure the site was responsive
-            Followed accessibility protocols to ensure that all font sizes and colors were in accordance with accessibility laws
-            "
+            address="Remote"
+            work1="Collaborated with a remote cross-functional 26-person team to onboard and ship features in under one month"
+            work2="Conducted code reviews, approved Pull Requests, and led team meetings to ensure tasks were completed"
+            work3="Pitched design ideas made with Figma to the stakeholders weekly, and also showcased newly implemented features"
+            work4="Utilized Ant-Design and Less to style landing pages and implemented media queries to ensure the site was responsive"
+            work5="Followed accessibility protocols to ensure that all font sizes and colors were in accordance with accessibility laws"
           />
 
           <Details
@@ -95,14 +109,13 @@ const Experience = () => {
             companyLink="/"
             time="July 2022 - Present"
             address="Lakewood, OH"
-            work="Collaborated with a remote cross-functional 26-person team to onboard and ship features in under one month
-            Conducted code reviews, approved Pull Requests, and led team meetings to ensure tasks were completed
-            Pitched design ideas made with Figma to the stakeholders weekly, and also showcased newly implemented features 
-            Utilized Ant-Design and Less to style landing pages and implemented media queries to ensure the site was responsive
-            Followed accessibility protocols to ensure that all font sizes and colors were in accordance with accessibility laws
-            "
+            work1="Architect brand-new software solutions to fulfill project requirements"
+            work2="Create, design, and implement layouts for new and existing web pages"
+            work3="Create and maintain database designs for data storage and processing"
+            work4="Maintain legacy code written by other developers, including bug fixes"
+            work5="Integrate external software libraries and APIs into existing projects"
           />
-        </motion.ul>
+        </motion.div>
         <Education />
       </div>
     </div>

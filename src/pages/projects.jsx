@@ -118,11 +118,20 @@ const Projects = () => {
           <div className="grid grid-cols-12 gap-24 gap-y-12">
             <div className="col-span-12">
               <FeaturedProject
+                title="Restauraunt Site"
+                img={literary}
+                summary="Web application that enables users to search for hotels in a specific city, choose amount of adults / children, view hotel images and finally book the room. The site also has an administrative dashboad for performing CRUD operations for new hotels."
+                link="https://restaurant-site-one.vercel.app/"
+                github="https://github.com/jimjamesjimathy/LIT"
+              />
+            </div>
+            <div className="col-span-6">
+              <Project
                 title="Hotel Booking Site"
                 img={hotelApp}
                 summary="Web application that enables users to search for hotels in a specific city, choose amount of adults / children, view hotel images and finally book the room. The site also has an administrative dashboad for performing CRUD operations for new hotels."
-                link="/"
-                github="www.github.com"
+                link="https://github.com/jimjamesjimathy/hotelBooking-fullstack"
+                github="https://github.com/jimjamesjimathy/hotelBooking-fullstack"
                 type="Featured Project"
               />
             </div>
@@ -131,17 +140,8 @@ const Projects = () => {
                 title="Social Media App"
                 img={instaJam}
                 summary="Web application that enables users to search for hotels in a specific city, choose amount of adults / children, view hotel images and finally book the room. The site also has an administrative dashboad for performing CRUD operations for new hotels."
-                link="/"
-                github="www.github.com"
-              />
-            </div>
-            <div className="col-span-6">
-              <Project
-                title="Restauraunt Site"
-                img={literary}
-                summary="Web application that enables users to search for hotels in a specific city, choose amount of adults / children, view hotel images and finally book the room. The site also has an administrative dashboad for performing CRUD operations for new hotels."
-                link="/"
-                github="www.github.com"
+                link="https://github.com/jimjamesjimathy/instaJam"
+                github="https://github.com/jimjamesjimathy/instaJam"
               />
             </div>
             <div className="col-span-12">
@@ -149,8 +149,8 @@ const Projects = () => {
                 title="Admin Dashboard"
                 img={adminDashboard}
                 summary="Web application that enables Administrator to perform CRUD operations to update users/employee information as well as delete or change status of user/employee"
-                link="/"
-                github="www.github.com"
+                link="https://admin-dashboard-umber-one.vercel.app/"
+                github="https://github.com/jimjamesjimathy/admin-dashboard"
                 type="Featured Project"
               />
             </div>

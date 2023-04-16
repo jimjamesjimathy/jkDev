@@ -50,7 +50,7 @@ const Details = ({
 
 const Education = ({ ref }) => {
   return (
-    <div className="mt-24 mb-80" ref={ref}>
+    <div className="mt-24 mb-64" ref={ref}>
       <AnimatedText
         text="Education"
         className="text-[4vw] justify-center font-light mb-8"
