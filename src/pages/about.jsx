@@ -42,9 +42,9 @@ const About = () => {
       </Head>
       <PageTransition />
       <main className="flex w-full flex-col items-center justify-center overflow-x-hidden SKILLS">
-        <Layout className="pt-16 px-12">
+        <Layout className="pt-16 px-12 min-h-full">
           <div className="flex w-full h-full ">
-            <div className="flex-[2] flex flex-col w-full justify-center text-center px-8">
+            <div className="flex-[2] flex flex-col w-full justify-center text-center px-8 xmd:px-0 xl:mt-24">
               <AnimatedText
                 text="About Me"
                 className="sm:text-[12vw] lg:text-[9vw] text-[7vw] justify-center font-light mb-8 mt-[-1em]"
@@ -63,7 +63,7 @@ const About = () => {
                 operations demanding tact, enthusiasm, and an exemplary work
                 ethic.
               </p>
-              <p className="font-medium text-black-200 dark:text-white">
+              <p className="sm:hidden block font-medium text-black-200 dark:text-white">
                 I am originally from San Marcos, TX, but I currently reside in
                 Lakewood, OH. I have my sights set on moving to Seattle, WA.
                 Outside of the coding world I like to keep busy. I play 5
@@ -83,7 +83,7 @@ const About = () => {
               />
             </div>
 
-            <div className="sm:hidden flex-[.5] flex flex-col items-end justify-evenly">
+            <div className="xmd:hidden flex-[.75] flex flex-col items-end justify-evenly">
               <div className="flex flex-col items-end justify-center">
                 <span className="text-7xl inline-block text-fourth dark:text-secondary">
                   <AnimatedNumbers value={10} />+

@@ -7,6 +7,8 @@ const greeting = {
   animate: {
     opacity: 1,
     transition: {
+      when: "beforeChildren",
+      delay: 0.6,
       staggerChildren: 0.175,
     },
   },
@@ -21,7 +23,6 @@ const singleWord = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.85,
       type: "spring",
       stiffness: 200,
       duration: 1,

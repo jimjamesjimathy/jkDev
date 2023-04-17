@@ -16,9 +16,12 @@ const Details = ({
   addInfo,
 }) => {
   const ref = useRef(null);
+
   return (
-    <li className="first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-center">
-      <LiIcon reference={ref} />
+    <div className="first:mt-0 last:mb-0 w-[75%] xmd:w-full mx-auto flex flex-col items-center justify-center">
+      <div className="xmd:hidden block">
+        <LiIcon reference={ref} />
+      </div>
       <motion.div
         initial={{ y: 100 }}
         whileInView={{ y: 0 }}
@@ -44,19 +47,19 @@ const Details = ({
           <span className="font-bold text-lg">{add}</span>- {addInfo}
         </p>
       </motion.div>
-    </li>
+    </div>
   );
 };
 
 const Education = ({ ref }) => {
   return (
-    <div className="mt-24 mb-64" ref={ref}>
+    <div className="mt-32 mb-64 sm:mb-24 sm:text-center" ref={ref}>
       <AnimatedText
         text="Education"
-        className="text-[4vw] justify-center font-light mb-8"
+        className="xs:text-[15vw] sm:text-[11vw] lg:text-[7vw] text-[4vw] justify-center font-light mb-8"
       />
       <div className="relative">
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
+        <div className="w-full flex flex-col items-start justify-between ml-4 xmd:ml-0 xmd:px-4">
           <Details
             type="Full Stack Developer Certification"
             time="Sep 2021 - July 2022"
@@ -69,7 +72,7 @@ const Education = ({ ref }) => {
             add="Additional Skills"
             addInfo="Agile Project Management, Algorithms, Architecture, Debugging, Deployment"
           />
-        </ul>
+        </div>
       </div>
     </div>
   );

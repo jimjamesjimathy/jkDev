@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-32 font-medium flex items-center md:justify-center justify-between">
+    <header className="w-full px-32 h-[9vh] font-medium flex items-center md:justify-center justify-between">
       <button
         className={`${
           menuOpen
@@ -81,7 +81,7 @@ const Navbar = () => {
           className="text-black-200 dark:text-white mx-4"
         />
       </nav>
-      <nav className="flex-1 flex items-center justify-center">
+      <nav className="md:hidden flex items-center justify-center">
         <Link
           href="/"
           className="bg-tertiary dark:bg-transparent transition-all duration-300 rounded-full w-auto flex items-center justify-center h-auto px-1 my-2"

@@ -43,8 +43,10 @@ const Details = ({
 }) => {
   const ref = useRef(null);
   return (
-    <div className="ml-32 first:mb-24">
-      <LiIcon reference={ref} />
+    <div className="ml-24 first:mb-16 xmd:ml-0 xmd:px-4">
+      <div className="xmd:hidden block">
+        <LiIcon reference={ref} />
+      </div>
       <motion.div variants={containerItem}>
         <h3 className="capitalize text-2xl text-black-200 dark:text-white">
           {position}&nbsp;
@@ -55,11 +57,11 @@ const Details = ({
         <span className="capitalize text-sixth italic">
           {time} | {address}
         </span>
-        <p className="w-full text-black-200 dark:text-white">{work1}</p>
-        <p className="w-full text-black-200 dark:text-white">{work2}</p>
-        <p className="w-full text-black-200 dark:text-white">{work3}</p>
-        <p className="w-full text-black-200 dark:text-white">{work4}</p>
-        <p className="w-full text-black-200 dark:text-white">{work5}</p>
+        <p className="w-full text-black-200 dark:text-white">&bull; {work1}</p>
+        <p className="w-full text-black-200 dark:text-white">&bull; {work2}</p>
+        <p className="w-full text-black-200 dark:text-white">&bull; {work3}</p>
+        <p className="w-full text-black-200 dark:text-white">&bull; {work4}</p>
+        <p className="w-full text-black-200 dark:text-white">&bull; {work5}</p>
       </motion.div>
     </div>
   );
@@ -69,18 +71,21 @@ const Experience = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center start"],
+    offset: ["start center", "center start"],
   });
+
+  console.log(scrollYProgress);
+
   return (
-    <div className="w-full">
+    <div className="w-full xmd:text-center">
       <AnimatedText
         text="Experience"
-        className="text-[4vw] justify-center font-light mb-8"
+        className="xs:text-[15vw] sm:text-[11vw] lg:text-[7vw] text-[4vw] justify-center font-light mb-8"
       />
-      <div ref={ref} className="w-[75%] mx-auto relative">
+      <div ref={ref} className="w-[75%] xmd:w-full mx-auto relative">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-9 top-0 w-[3px] h-full bg-tertiary origin-top"
+          className="absolute left-9 top-1 w-[3px] h-full bg-tertiary origin-top xmd:hidden"
         />
 
         <motion.div
@@ -88,7 +93,7 @@ const Experience = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-start"
+          className="w-full flex flex-col items-start xmd:items-center justify-center"
         >
           <Details
             position="team project manager / full stack developer"

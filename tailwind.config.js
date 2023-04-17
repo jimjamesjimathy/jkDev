@@ -36,9 +36,6 @@ module.exports = {
         card: "0px 35px 120px -15px #211e35",
         about: "7px 5px 0px 1px #000",
       },
-      screens: {
-        xs: "480px",
-      },
       backgroundImage: {
         circularLight:
           "repeating-radial-gradient(rgba(0, 0, 0, 0.0) 0px, rgba(0, 0, 0, 0.0) 92px, #000 99px)",
@@ -50,7 +47,8 @@ module.exports = {
       "2xl": { max: "1535px" },
       xl: { max: "1279px" },
       lg: { max: "1023px" },
-      md: { max: "892px" },
+      md: { max: "930px" },
+      xmd: { max: "816px" },
       sm: { max: "703px" },
       xs: { max: "569px" },
     },

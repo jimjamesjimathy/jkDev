@@ -3,10 +3,12 @@ import Layout from "./Layout";
 
 const Footer = () => {
   return (
-    <footer className="w-full text-lg px-32 text-black-200 dark:text-white">
-      <Layout className="p-0 flex items-center justify-between h-[10vh]">
-        <span>{new Date().getFullYear()} &copy; All Right Reserved</span>
-        <div className="flex items-center">
+    <footer>
+      <Layout className="px-32 sm:px-4 h-[10vh] text-black-200 dark:text-white flex xmd:flex-col items-center justify-between">
+        <span className="flex-1">
+          {new Date().getFullYear()} &copy; All Right Reserved
+        </span>
+        <div className="flex items-center justify-end flex-1">
           Built with <span className="text-fourth text-2xl px-1">&#9825;</span>
           by&nbsp;{" "}
           <Link
