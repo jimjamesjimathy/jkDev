@@ -61,16 +61,16 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
   };
 
   return (
-    <header className="absolute top-0 left-0 ring-0 bottom-0 z-50 w-screen h-screen bg-white-200 font-medium flex flex-col items-center md:justify-center justify-between dark:bg-tertiary">
+    <header className="absolute top-0 bottom-0 left-0 z-50 flex flex-col items-center justify-between w-screen h-screen font-medium ring-0 bg-white-200 md:justify-center dark:bg-tertiary">
       <motion.nav
         variants={greeting}
         initial="initial"
         animate="animate"
         exit={{ width: "0%", height: "0%", opacity: 0 }}
-        className="flex flex-col items-center justify-center gap-10 w-7/12 bg-sixth h-2/3 rounded-2xl relative"
+        className="relative flex flex-col items-center justify-center w-7/12 gap-10 bg-sixth h-2/3 rounded-2xl"
       >
         <button
-          className="hidden md:flex flex-col justify-center items-center absolute top-10 left-0 right-0"
+          className="absolute left-0 right-0 flex-col items-center justify-center hidden md:flex top-10"
           onClick={handleMenu}
         >
           <span
@@ -100,15 +100,15 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
           title="Projects"
           className="text-5xl font-light"
         />
-        <div className="flex items-center justify-center gap-8 w-full">
+        <div className="flex items-center justify-center w-full gap-8">
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
-            className="ml-3 flex items-center justify-center rounded-full"
+            className="flex items-center justify-center ml-3 rounded-full"
           >
             {mode === "dark" ? (
-              <MdOutlineWbSunny className="text-2xl p-0 text-fifthLight" />
+              <MdOutlineWbSunny className="p-0 text-2xl text-fifthLight" />
             ) : (
-              <MdOutlineDarkMode className="text-2xl p-0 text-gray-400" />
+              <MdOutlineDarkMode className="p-0 text-2xl text-gray-400" />
             )}
           </button>
           <motion.a

@@ -41,19 +41,19 @@ const About = () => {
         <meta name="description" content="any description" />
       </Head>
       <PageTransition />
-      <main className="flex w-full flex-col items-center justify-center overflow-x-hidden SKILLS">
-        <Layout className="pt-16 px-12 min-h-full">
+      <main className="flex flex-col items-center justify-center w-full overflow-x-hidden SKILLS">
+        <Layout className="min-h-full px-12 pt-16">
           <div className="flex w-full h-full ">
             <div className="flex-[2] flex flex-col w-full justify-center text-center px-8 xmd:px-0 xl:mt-24">
               <AnimatedText
                 text="About Me"
                 className="sm:text-[12vw] lg:text-[9vw] text-[7vw] justify-center font-light mb-8 mt-[-1em]"
               />
-              <h2 className="font-normal text-2xl text-black-200 dark:text-white">
+              <h2 className="text-2xl font-normal text-black-200 dark:text-white">
                 My name is{" "}
                 <span className="font-bold">James Alan Mikal Kirkwood</span>
               </h2>
-              <p className="font-semibold my-4 text-black-200 dark:text-white">
+              <p className="my-4 font-semibold text-black-200 dark:text-white">
                 I am a full-stack Software Developer{" "}
                 <span className="italic text-fourth dark:text-fifthLight">
                   specializing in Front End Web Developement.
@@ -63,7 +63,7 @@ const About = () => {
                 operations demanding tact, enthusiasm, and an exemplary work
                 ethic.
               </p>
-              <p className="sm:hidden block font-medium text-black-200 dark:text-white">
+              <p className="block font-medium sm:hidden text-black-200 dark:text-white">
                 I am originally from San Marcos, TX, but I currently reside in
                 Lakewood, OH. I have my sights set on moving to Seattle, WA.
                 Outside of the coding world I like to keep busy. I play 5
@@ -74,18 +74,18 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex-1 xl:hidden relative h-full w-full rounded-2xl border-2 border-tertiary p-8 bg-secondary shadow-about shadow-black-200 md:hidden">
+            <div className="relative flex-1 w-full h-full p-8 border-2 xl:hidden rounded-2xl border-tertiary bg-secondary shadow-about shadow-black-200 md:hidden">
               <Image
                 src={about}
                 alt="computer screen with code"
-                className="w-full h-full rounded-2xl object-cover border-2 border-tertiary"
+                className="object-cover w-full h-full border-2 rounded-2xl border-tertiary"
                 priority
               />
             </div>
 
             <div className="xmd:hidden flex-[.75] flex flex-col items-end justify-evenly">
               <div className="flex flex-col items-end justify-center">
-                <span className="text-7xl inline-block text-fourth dark:text-secondary">
+                <span className="inline-block text-7xl text-fourth dark:text-secondary">
                   <AnimatedNumbers value={10} />+
                 </span>
                 <h2 className="text-xl italic font-normal text-secondary dark:text-gray-100">
@@ -93,7 +93,7 @@ const About = () => {
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="text-7xl inline-block text-fourth dark:text-secondary">
+                <span className="inline-block text-7xl text-fourth dark:text-secondary">
                   <AnimatedNumbers value={20} />+
                 </span>
                 <h2 className="text-xl italic font-normal text-secondary dark:text-gray-100">
@@ -101,7 +101,7 @@ const About = () => {
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="text-7xl inline-block text-fourth dark:text-secondary">
+                <span className="inline-block text-7xl text-fourth dark:text-secondary">
                   <AnimatedNumbers value={3} />+
                 </span>
                 <h2 className="text-xl italic font-normal text-secondary dark:text-gray-100">

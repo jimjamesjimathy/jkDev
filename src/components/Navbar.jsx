@@ -59,32 +59,32 @@ const Navbar = () => {
           }`}
         ></span>
       </button>
-      <nav className="flex-1 md:hidden block">
+      <nav className="flex-1 block md:hidden">
         <CustomLink
           href="/"
           title="Home"
-          className="text-black-200 dark:text-white mr-4"
+          className="mr-4 text-black-200 dark:text-white"
         />
         <CustomLink
           href="/about"
           title="About"
-          className="text-black-200 dark:text-white mx-4"
+          className="mx-4 text-black-200 dark:text-white"
         />
         <CustomLink
           href="/projects"
           title="Projects"
-          className="text-black-200 dark:text-white mx-4"
+          className="mx-4 text-black-200 dark:text-white"
         />
         <CustomLink
           href="/contact"
           title="Contact"
-          className="text-black-200 dark:text-white mx-4"
+          className="mx-4 text-black-200 dark:text-white"
         />
       </nav>
-      <nav className="md:hidden flex items-center justify-center">
+      <nav className="flex items-center justify-center md:hidden">
         <Link
           href="/"
-          className="bg-tertiary dark:bg-transparent transition-all duration-300 rounded-full w-auto flex items-center justify-center h-auto px-1 my-2"
+          className="flex items-center justify-center w-auto h-auto px-1 my-2 transition-all duration-300 rounded-full bg-tertiary dark:bg-transparent"
         >
           <Image
             src={logo}
@@ -93,15 +93,15 @@ const Navbar = () => {
           />
         </Link>
       </nav>
-      <nav className="flex-1 md:hidden flex items-center justify-end gap-8">
+      <nav className="flex items-center justify-end flex-1 gap-8 md:hidden">
         <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          className="ml-3 flex items-center justify-center rounded-full"
+          className="flex items-center justify-center ml-3 rounded-full"
         >
           {mode === "dark" ? (
-            <MdOutlineWbSunny className="text-2xl p-0 text-fifthLight hover:scale-150 transition-all duration-500" />
+            <MdOutlineWbSunny className="p-0 text-2xl transition-all duration-500 text-fifthLight hover:scale-150" />
           ) : (
-            <MdOutlineDarkMode className="text-2xl p-0 text-gray-700 hover:scale-150 transition-all duration-500" />
+            <MdOutlineDarkMode className="p-0 text-2xl text-gray-700 transition-all duration-500 hover:scale-150" />
           )}
         </button>
         <motion.a

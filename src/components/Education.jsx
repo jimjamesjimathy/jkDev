@@ -19,7 +19,7 @@ const Details = ({
 
   return (
     <div className="first:mt-0 last:mb-0 w-[75%] xmd:w-full mx-auto flex flex-col items-center justify-center">
-      <div className="xmd:hidden block">
+      <div className="block xmd:hidden">
         <LiIcon reference={ref} />
       </div>
       <motion.div
@@ -28,23 +28,23 @@ const Details = ({
         transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
         viewport={{ once: true }}
       >
-        <h3 className="capitalize text-2xl font-bold text-black-200 dark:text-white">
+        <h3 className="text-2xl font-bold capitalize text-black-200 dark:text-white">
           {type}
         </h3>
-        <span className="capitalize text-sixth italic">
+        <span className="italic capitalize text-sixth">
           {time} | {place}
         </span>
-        <h4 className="font-semibold text-xl text-black-200 dark:text-white">
+        <h4 className="text-xl font-semibold text-black-200 dark:text-white">
           {desc}
         </h4>
         <p className="w-full text-black-200 dark:text-white text-light">
-          <span className="font-bold text-lg">{frontend}</span>- {frontendInfo}
+          <span className="text-lg font-bold">{frontend}</span>- {frontendInfo}
         </p>
         <p className="w-full text-black-200 dark:text-white text-light">
-          <span className="font-bold text-lg">{backend}</span>- {backendInfo}
+          <span className="text-lg font-bold">{backend}</span>- {backendInfo}
         </p>
         <p className="w-full text-black-200 dark:text-white text-light">
-          <span className="font-bold text-lg">{add}</span>- {addInfo}
+          <span className="text-lg font-bold">{add}</span>- {addInfo}
         </p>
       </motion.div>
     </div>
@@ -59,7 +59,7 @@ const Education = ({ ref }) => {
         className="xs:text-[15vw] sm:text-[11vw] lg:text-[7vw] text-[4vw] justify-center font-light mb-8"
       />
       <div className="relative">
-        <div className="w-full flex flex-col items-start justify-between ml-4 xmd:ml-0 xmd:px-4">
+        <div className="flex flex-col items-start justify-between w-full ml-4 xmd:ml-0 xmd:px-4">
           <Details
             type="Full Stack Developer Certification"
             time="Sep 2021 - July 2022"

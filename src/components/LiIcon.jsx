@@ -13,7 +13,7 @@ const LiIcon = ({ reference }) => {
           cx="75"
           cy="50"
           r="20"
-          className="stroke-fourthLight stroke-1 fill-none"
+          className="stroke-1 stroke-fourthLight fill-none"
         />
         <motion.circle
           cx="75"
@@ -24,7 +24,7 @@ const LiIcon = ({ reference }) => {
             pathLength: scrollYProgress,
           }}
         />
-        <circle cx="75" cy="50" r="20" className=" stroke-1 fill-fourthLight" />
+        <circle cx="75" cy="50" r="20" className="stroke-1 fill-fourthLight" />
       </svg>
     </figure>
   );

@@ -44,17 +44,17 @@ const Details = ({
   const ref = useRef(null);
   return (
     <div className="ml-24 first:mb-16 xmd:ml-0 xmd:px-4">
-      <div className="xmd:hidden block">
+      <div className="block xmd:hidden">
         <LiIcon reference={ref} />
       </div>
       <motion.div variants={containerItem}>
-        <h3 className="capitalize text-2xl text-black-200 dark:text-white">
+        <h3 className="text-2xl capitalize text-black-200 dark:text-white">
           {position}&nbsp;
           <a href={companyLink} target="_blank" className="text-fourthLight">
             @{company}
           </a>
         </h3>
-        <span className="capitalize text-sixth italic">
+        <span className="italic capitalize text-sixth">
           {time} | {address}
         </span>
         <p className="w-full text-black-200 dark:text-white">&bull; {work1}</p>
@@ -93,7 +93,7 @@ const Experience = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="w-full flex flex-col items-start xmd:items-center justify-center"
+          className="flex flex-col items-start justify-center w-full xmd:items-center"
         >
           <Details
             position="team project manager / full stack developer"

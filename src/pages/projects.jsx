@@ -17,12 +17,12 @@ const FramerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
-    <article className="w-full flex items-center justify-between rounded-3xl border border-tertiary bg-fourthLight dark:bg-sixth shadow-about p-12">
+    <article className="flex items-center justify-between w-full p-12 border md:flex-col rounded-3xl border-tertiary bg-fourthLight dark:bg-sixth shadow-about md:p-4">
       <PageTransition />
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
+        className="w-1/2 overflow-hidden rounded-lg cursor-pointer md:w-5/6"
       >
         <FramerImage
           whileHover={{ scale: 1.05 }}
@@ -31,29 +31,27 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
           alt={title}
           className="w-full h-auto"
           priority
-          sizes="(max-width: 768px) 100vw,
-                 (max-width: 1200px) 50vw, 50vw"
         />
       </Link>
 
-      <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-        <span className="text-fourthLight text-xl">{type}</span>
+      <div className="flex flex-col items-start justify-between w-1/2 pl-6 md:pl-0 md:w-full md:items-center md:justify-center md:text-center">
+        <span className="text-xl text-fourthLight">{type}</span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-4xl ">{title}</h2>
+          <h2 className="w-full my-2 text-4xl text-left ">{title}</h2>
         </Link>
         <p className="my-2 font-meduim">{summary}</p>
-        <div className="mt-2 flex items-center">
+        <div className="flex items-center mt-2">
           <Link href={github} target="_blank" className="w-10">
             <GithubIcon />
           </Link>
           <Link
             href={link}
             target="_blank"
-            className="ml-4 rounded-sm bg-tertiary text-white py-1 px-6 text-lg"
+            className="px-6 py-1 ml-4 text-lg text-white rounded-sm bg-tertiary"
           >
             Project Demo
           </Link>
@@ -65,11 +63,11 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
 
 const Project = ({ type, title, summary, img, link, github }) => {
   return (
-    <article className="w-full h-full flex flex-col items-center justify-center rounded-2xl border border-tertiary bg-sixth dark:bg-fourthLight shadow-about p-6 relative">
+    <article className="relative flex flex-col items-center justify-center w-full h-full p-6 border rounded-2xl border-tertiary bg-sixth dark:bg-fourthLight shadow-about">
       <Link
         href={link}
         target="_blank"
-        className="cursor-pointer overflow-hidden rounded-lg"
+        className="overflow-hidden rounded-lg cursor-pointer"
       >
         <FramerImage
           whileHover={{ scale: 1.05 }}
@@ -80,16 +78,16 @@ const Project = ({ type, title, summary, img, link, github }) => {
         />
       </Link>
 
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-fourthLight text-xl">{type}</span>
+      <div className="flex flex-col items-start justify-between w-full mt-4">
+        <span className="text-xl text-fourthLight">{type}</span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-2xl ">{title}</h2>
+          <h2 className="w-full my-2 text-2xl text-left ">{title}</h2>
         </Link>
-        <div className="w-full mt-2 flex items-center justify-between">
+        <div className="flex items-center justify-between w-full mt-2">
           <Link href={link} target="_blank" className="ml-4 text-lg">
             Demo
           </Link>
@@ -109,14 +107,14 @@ const Projects = () => {
         <title>Jk || Dev - Projects</title>
         <meta name="description" content="any description" />
       </Head>
-      <main className="w-full mb-16 flex flex-col items-center justify-center">
-        <Layout className="p-16">
+      <main className="flex flex-col items-center justify-center w-full mb-16">
+        <Layout className="p-16 xmd:p-0 xmd:px-4">
           <AnimatedText
             text="What I've been working on"
-            className="mb-8 text-[5vw] font-light"
+            className="sm:font-semibold md:text-[7vw] lg:text-[8vw] justify-center text-[5vw] font-light mb-8"
           />
-          <div className="grid grid-cols-12 gap-24 gap-y-12">
-            <div className="col-span-12">
+          <div className="grid grid-cols-12 gap-12 xs:flex xs:flex-col xs:items-center xs:justify-center">
+            <div className="col-span-full">
               <FeaturedProject
                 title="Restauraunt Site"
                 img={literary}
@@ -125,7 +123,7 @@ const Projects = () => {
                 github="https://github.com/jimjamesjimathy/LIT"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 md:col-span-full">
               <Project
                 title="Hotel Booking Site"
                 img={hotelApp}
@@ -135,7 +133,7 @@ const Projects = () => {
                 type="Featured Project"
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 md:col-span-full">
               <Project
                 title="Social Media App"
                 img={instaJam}
@@ -144,7 +142,7 @@ const Projects = () => {
                 github="https://github.com/jimjamesjimathy/instaJam"
               />
             </div>
-            <div className="col-span-12">
+            <div className="col-span-full">
               <FeaturedProject
                 title="Admin Dashboard"
                 img={adminDashboard}

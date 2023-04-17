@@ -21,28 +21,28 @@ export default function Home() {
       </Head>
       <PageTransition />
       <main className="flex items-center w-full min-h-[90vh]">
-        <Layout className="pt-0 px-8">
-          <div className="flex flex-row lg:flex-col items-center justify-between w-full">
-            <div className="lg:order-2 flex-1 flex items-center justify-center">
+        <Layout className="px-8 xs:px-2">
+          <div className="flex flex-row items-center justify-between w-full lg:flex-col">
+            <div className="flex items-center justify-center flex-1 xs:order-1 lg:order-2">
               <Image
                 src={hero}
                 alt="James Kirkwood"
-                className="md:w-7/12 lg:w-1/2 w-10/12 h-auto object-cover hidden xs:flex grayscale-[30%] hover:grayscale-[0%] transition-all duration-700"
+                className="xs:mt-[-10vh] xs:w-full md:w-7/12 lg:w-1/2 w-10/12 h-auto object-cover xs:flex grayscale-[30%] hover:grayscale-[0%] transition-all duration-700"
                 priority
               />
             </div>
-            <div className="order-1 flex-1 flex lg:text-center flex-col items-center self-center overflow-hidden text-black-200 dark:text-white">
+            <div className="flex flex-col items-center self-center flex-1 order-1 overflow-hidden lg:text-center text-black-200 dark:text-white">
               <AnimatedText
                 text="Howdy! I'm James."
-                className="xs:text-[6vw] sm:text-[9vw] lg:justify-center w-full font-light"
+                className="xs:font-semibold xs:text-[11vw] sm:text-[9vw] text-[6vw] lg:justify-center w-full font-light"
               />
-              <p className="mt-2 font-normal text-md xs:text-xl sm:m-0 sm:p-0 md:px-8 md:w-screen">
+              <p className="mt-2 text-xl font-normal text-md xs:text-lg sm:m-0 sm:p-2 md:px-8 md:w-full xs:text-justify">
                 I am a full stack developer, and my goal is to turn ideas into
                 innovative web applications. Feel free to check out my latest{" "}
                 {""}
                 <Link
                   href="/projects"
-                  className="dark:text-fifthLight text-fourth border-b border-fourth dark:border-fifthLight transition-all duration-300"
+                  className="transition-all duration-300 border-b dark:text-fifthLight text-fourth border-fourth dark:border-fifthLight"
                 >
                   projects
                 </Link>
@@ -51,12 +51,12 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <div className="absolute right-8 bottom-8 inline-block w-32 ">
+        <div className="absolute inline-block w-32 right-8 bottom-8">
           <Image
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             src={lightBulb}
             alt="light bulb"
-            className="hidden xs:inline-block w-full h-auto hover:brightness-[120%] transition-all duration-700 cursor-pointer"
+            className="xs:hidden w-full h-auto hover:brightness-[120%] transition-all duration-700 cursor-pointer"
           />
         </div>
       </main>
