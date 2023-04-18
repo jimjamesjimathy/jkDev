@@ -1,34 +1,5 @@
 import { motion } from "framer-motion";
-
-const greeting = {
-  initial: {
-    opacity: 1,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      delay: 0.6,
-      staggerChildren: 0.175,
-    },
-  },
-};
-
-const singleWord = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      duration: 1,
-    },
-  },
-};
+import { greeting, singleWord } from "@/utilities/motion";
 
 const AnimatedText = ({ text, className = "" }) => {
   return (

@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { MdOutlineDarkMode, MdOutlineWbSunny } from "react-icons/md";
 import { useState } from "react";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
-import MobileNav from "./MobileNav";
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/assets/profile/logo.png";
+import MobileNav from "./MobileNav";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -38,8 +38,8 @@ const Navbar = () => {
       <button
         className={`${
           menuOpen
-            ? "opacity-0"
-            : "hidden md:flex flex-col justify-center items-center"
+            ? "opacity-0 "
+            : "hidden md:flex flex-col justify-center items-center transition-all delay-200"
         }`}
         onClick={handleMenu}
       >
@@ -109,7 +109,7 @@ const Navbar = () => {
           whileTap={{
             scale: 0.9,
           }}
-          href="/"
+          href="https://www.linkedin.com/in/jimjamesjimathy/"
           target={"_blank"}
         >
           <BsLinkedin className="text-2xl text-secondary dark:text-sixthLight" />
@@ -119,7 +119,7 @@ const Navbar = () => {
           whileTap={{
             scale: 0.9,
           }}
-          href="/"
+          href="https://www.instagram.com/jim.james.jimathy/"
           target={"_blank"}
         >
           <BsInstagram className="text-2xl text-secondary dark:text-sixthLight" />
@@ -129,17 +129,19 @@ const Navbar = () => {
           whileTap={{
             scale: 0.9,
           }}
-          href="/"
+          href="https://github.com/jimjamesjimathy"
           target={"_blank"}
         >
           <BsGithub className="text-2xl text-secondary dark:text-sixthLight" />
         </motion.a>
       </nav>
-      {/* {menuOpen ? (
-        <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      ) : (
-        <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      )} */}
+
+      {/* MOBILE NAVBAR */}
+      <AnimatePresence>
+        {menuOpen && (
+          <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        )}
+      </AnimatePresence>
     </header>
   );
 };

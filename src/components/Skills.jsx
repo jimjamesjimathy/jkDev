@@ -1,31 +1,7 @@
 import { motion } from "framer-motion";
+import { gridContainer, gridItem } from "@/utilities/motion";
 import AnimatedText from "./AnimatedText";
 import Layout from "./Layout";
-
-const gridContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      duration: 0.35,
-      staggerChildren: 0.25,
-    },
-  },
-};
-
-const gridItem = {
-  initial: {
-    opacity: 0,
-    x: 100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-    },
-  },
-};
 
 const Skill = ({ name, className = "" }) => {
   return (

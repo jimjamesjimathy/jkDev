@@ -1,5 +1,5 @@
 import AnimatedText from "@/components/AnimatedText";
-import { GithubIcon } from "@/components/Icons";
+import { BsGithub } from "react-icons/bs";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
@@ -46,7 +46,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
         <p className="my-2 font-meduim">{summary}</p>
         <div className="flex items-center mt-2">
           <Link href={github} target="_blank" className="w-10">
-            <GithubIcon />
+            <BsGithub className="text-2xl rounded-full text-black-200" />
           </Link>
           <Link
             href={link}
@@ -92,7 +92,7 @@ const Project = ({ type, title, summary, img, link, github }) => {
             Demo
           </Link>
           <Link href={github} target="_blank" className="w-10">
-            <GithubIcon />
+            <BsGithub className="text-2xl rounded-full text-black-200" />
           </Link>
         </div>
       </div>

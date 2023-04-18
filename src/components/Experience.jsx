@@ -3,31 +3,7 @@ import { useRef } from "react";
 import LiIcon from "./LiIcon";
 import Education from "./Education";
 import AnimatedText from "./AnimatedText";
-
-const container = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const containerItem = {
-  initial: {
-    y: 100,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      type: "spring",
-      stiffness: 200,
-    },
-  },
-};
+import { container, containerItem } from "../utilities/motion";
 
 const Details = ({
   position,
@@ -73,8 +49,6 @@ const Experience = () => {
     target: ref,
     offset: ["start center", "center start"],
   });
-
-  console.log(scrollYProgress);
 
   return (
     <div className="w-full xmd:text-center">
