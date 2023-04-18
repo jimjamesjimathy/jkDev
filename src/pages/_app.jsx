@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full min-h-screen bg-white dark:bg-tertiary">
+      <main className="w-full min-h-screen transition-all duration-700 bg-white dark:bg-tertiary">
         <Navbar />
         <AnimatePresence mode="wait">
           <Component key={router.asPath} {...pageProps} />

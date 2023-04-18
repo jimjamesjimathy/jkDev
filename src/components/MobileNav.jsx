@@ -62,6 +62,16 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
             }`}
           ></span>
         </button>
+        <button
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          className="absolute flex items-center justify-center rounded-full top-7 left-10"
+        >
+          {mode === "dark" ? (
+            <MdOutlineWbSunny className="p-0 text-4xl transition-all duration-500 text-fifthLight hover:scale-150" />
+          ) : (
+            <MdOutlineDarkMode className="p-0 text-4xl text-gray-700 transition-all duration-500 hover:scale-150" />
+          )}
+        </button>
         <CustomLink
           href="/"
           title="Home"
@@ -86,17 +96,6 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
           variants={navItem}
           className="flex items-center justify-center w-full gap-9"
         >
-          <button
-            onClick={() => setMode(mode === "light" ? "dark" : "light")}
-            className="absolute flex items-center justify-center rounded-full top-7 left-10"
-          >
-            {mode === "dark" ? (
-              <MdOutlineWbSunny className="p-0 text-3xl transition-all duration-500 text-fifthLight hover:scale-150" />
-            ) : (
-              <MdOutlineDarkMode className="p-0 text-3xl text-gray-700 transition-all duration-500 hover:scale-150" />
-            )}
-          </button>
-
           <motion.a
             whileHover={{ y: -5 }}
             whileTap={{

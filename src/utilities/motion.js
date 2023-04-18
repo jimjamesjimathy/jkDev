@@ -28,7 +28,7 @@ export const gridContainer = {
   animate: {
     transition: {
       duration: 0.35,
-      staggerChildren: 0.25,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -36,15 +36,14 @@ export const gridContainer = {
 export const gridItem = {
   initial: {
     opacity: 0,
-    x: 100,
+    x: 50,
   },
   animate: {
     opacity: 1,
     x: 0,
     transition: {
-      type: "spring",
+      type: "tween",
       stiffness: 200,
-      mass: 1.35,
     },
   },
 };
