@@ -40,10 +40,10 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="relative z-50 flex flex-col items-center justify-center w-7/12 py-24 rounded-2xl shadow-about shadow-black-200 bg-sixth dark:bg-fourthLight gap-11"
+        className="relative z-50 flex flex-col items-center justify-center py-24 sm:w-10/12 md:w-7/12 rounded-2xl shadow-about shadow-black-200 bg-sixth dark:bg-fourthLight gap-11"
       >
         <button
-          className="absolute flex-col items-center justify-center hidden transition-all delay-200 top-10 right-10 md:flex"
+          className="absolute z-50 flex-col items-center justify-center hidden transition-all delay-200 top-10 right-10 md:flex"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span

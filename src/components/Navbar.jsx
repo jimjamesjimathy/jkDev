@@ -60,7 +60,7 @@ const Navbar = () => {
       </button>
       <nav className="flex items-start flex-1 md:hidden">
         <Link href="/" className="h-[9vh] w-1/3 flex items-center">
-          <Image src={logoLight} className="w-auto h-full" />
+          <Image src={logoLight} className="w-auto h-4/6" alt="company logo" />
         </Link>
       </nav>
       <nav className="flex items-center justify-end flex-1 gap-7 md:hidden h-[9vh]">

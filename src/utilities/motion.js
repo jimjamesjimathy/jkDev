@@ -93,7 +93,7 @@ export const mobileNavContainer = {
     opacity: 0,
     transition: {
       when: "afterChildren",
-      duration: 0.6,
+      duration: 0.15,
       staggerChildren: 0.175,
     },
   },

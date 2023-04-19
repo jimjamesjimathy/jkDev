@@ -129,7 +129,7 @@ const Contact = () => {
 
           <div className="flex flex-col items-center justify-center flex-1 min-h-full gap-8 rounded-2xl bg-secondary dark:bg-fourthLight shadow-about shadow-black-200">
             <Image src={hero} alt="tree" className="object-cover w-5/6 p-2" />
-            <div className="flex flex-col items-center justify-center gap-2 text-center text-white ">
+            <div className="flex flex-col items-center justify-center gap-2 text-center text-white xs:px-2">
               <h2 className="text-5xl font-light">James Kirkwood</h2>
               <h2 className="text-2xl">Full Stack Developer</h2>
               <p className="pb-8">
