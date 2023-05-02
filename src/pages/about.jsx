@@ -56,7 +56,7 @@ const About = () => {
               <p className="my-4 font-semibold text-black-200 dark:text-white">
                 I am a full-stack Software Developer{" "}
                 <span className="italic text-fourth dark:text-fifthLight">
-                  specializing in Front End Web Developement.
+                  specializing in front end engineering.
                 </span>{" "}
                 <br />I am a self-motivated and highly reliable full-stack
                 developer positioned to contribute strongly to web developer
