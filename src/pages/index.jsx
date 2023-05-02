@@ -46,7 +46,7 @@ export default function Home() {
                 >
                   projects
                 </Link>
-                , showcasing my expertise in React.js and Web Development.
+                , showcasing my expertise in Web Development.
               </p>
             </div>
           </div>

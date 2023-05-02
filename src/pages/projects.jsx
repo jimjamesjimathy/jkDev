@@ -127,7 +127,7 @@ const Projects = () => {
               <FeaturedProject
                 title="Restauraunt Site"
                 img={literary}
-                summary="Web application that enables users to search for hotels in a specific city, choose amount of adults / children, view hotel images and finally book the room. The site also has an administrative dashboad for performing CRUD operations for new hotels."
+                summary="Web application that enables users to view the restaurants menus, book a table, see reviews, and get contact info for reservations or parties."
                 link="https://restaurant-site-one.vercel.app/"
                 github="https://github.com/jimjamesjimathy/LIT"
               />
