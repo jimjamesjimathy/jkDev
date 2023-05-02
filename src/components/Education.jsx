@@ -53,7 +53,7 @@ const Details = ({
 
 const Education = ({ ref }) => {
   return (
-    <div className="mt-32 mb-64 sm:mb-24 sm:text-center" ref={ref}>
+    <div className="mt-32 mb-[17em] sm:mb-24 sm:text-center" ref={ref}>
       <AnimatedText
         text="Education"
         className="xs:text-[15vw] sm:text-[11vw] lg:text-[7vw] text-[4vw] justify-center font-light mb-8"
