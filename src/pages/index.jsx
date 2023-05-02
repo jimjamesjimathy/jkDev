@@ -51,12 +51,12 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <div className="absolute inline-block w-32 right-8 bottom-8">
+        <div className="absolute inline-block w-32 right-8 bottom-[7vh]">
           <Image
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             src={lightBulb}
             alt="light bulb"
-            className="xs:hidden w-full h-auto hover:brightness-[120%] transition-all duration-700 cursor-pointer"
+            className="lg:hidden w-full h-auto hover:brightness-[120%] transition-all duration-700 cursor-pointer"
           />
         </div>
       </main>
